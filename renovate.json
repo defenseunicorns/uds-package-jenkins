@@ -53,6 +53,14 @@
       "matchStrings": [
         "-\\s(?<depName>[aA0-zZ9\\-]*):(?<currentValue>.*)"
       ],
+      "depNameTemplate": "jenkinsci/{{{depName}}}",
+      "datasourceTemplate": "github-tags"
+    },
+    {
+      "fileMatch": ["values\\/.*\\.ya?ml$"],
+      "matchStrings": [
+        "-\\s(?<depName>[aA0-zZ9\\-]*):(?<currentValue>.*)"
+      ],
       "depNameTemplate": "jenkinsci/{{{depName}}}-plugin",
       "datasourceTemplate": "github-tags"
     },
