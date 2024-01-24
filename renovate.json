@@ -51,6 +51,30 @@
     {
       "fileMatch": ["values\\/.*\\.ya?ml$"],
       "matchStrings": [
+        "-\\s(?<depName>pipeline\\-stage\\-tags\\-.*):(?<currentValue>.*)"
+      ],
+      "depNameTemplate": "jenkinsci/pipeline-model-definition-plugin",
+      "datasourceTemplate": "github-tags"
+    },
+    {
+      "fileMatch": ["values\\/.*\\.ya?ml$"],
+      "matchStrings": [
+        "-\\s(?<depName>pipeline\\-model\\-.*):(?<currentValue>.*)"
+      ],
+      "depNameTemplate": "jenkinsci/pipeline-model-definition-plugin",
+      "datasourceTemplate": "github-tags"
+    },
+    {
+      "fileMatch": ["values\\/.*\\.ya?ml$"],
+      "matchStrings": [
+        "-\\s(?<depName>mina\\-sshd\\-api\\-.*):(?<currentValue>.*)"
+      ],
+      "depNameTemplate": "jenkinsci/mina-sshd-api-plugin",
+      "datasourceTemplate": "github-tags"
+    },
+    {
+      "fileMatch": ["values\\/.*\\.ya?ml$"],
+      "matchStrings": [
         "-\\s(?<depName>[aA0-zZ9\\-]*):(?<currentValue>.*)"
       ],
       "depNameTemplate": "jenkinsci/{{{depName}}}-plugin",
