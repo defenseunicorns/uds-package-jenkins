@@ -1,0 +1,10 @@
+tasks:
+  - name: jenkins-package
+    actions:
+      - description: Deploy the UDS Jenkins Zarf Package
+        cmd: zarf package deploy zarf-package-jenkins-${UDS_ARCH}-*.tar.zst --confirm --no-progress
+
+  - name: jenkins-test-bundle
+    actions:
+      - description: Deploy the UDS bundle with Jenkins and its dependencies
+        cmd: UDS_CONFIG=bundle/uds-config.yaml uds deploy bundle/uds-bundle-jenkins-test-${UDS_ARCH}-*.tar.zst --confirm --no-progress

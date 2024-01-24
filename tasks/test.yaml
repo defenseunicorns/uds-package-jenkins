@@ -1,0 +1,19 @@
+tasks:
+  - name: health-check
+    actions:
+      - description: Jenkins StatefulSet Health Check
+        wait:
+          cluster:
+            kind: StatefulSet
+            # TODO Confirm this
+            name: jenkins-0
+            namespace: jenkins
+
+  - name: ingress
+    actions:
+      - description: Jenkins UI Health Check
+        wait:
+          network:
+            protocol: https
+            address: jenkins.uds.dev
+            code: 200

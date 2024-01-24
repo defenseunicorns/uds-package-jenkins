@@ -1,0 +1,20 @@
+apiVersion: uds.dev/v1alpha1
+kind: Package
+metadata:
+  name: jenkins
+  namespace: {{ .Release.Namespace }}
+spec:
+  network:
+    expose:
+      - service: jenkins
+        podLabels:
+          app.kubernetes.io/name: jenkins
+        gateway: tenant
+        host: jenkins
+        # TODO: change to Jenkins's port number
+        port: 8080
+    # allow:
+    #   - direction: Egress
+    #     podLabels:
+    #       app: jenkins
+    #     remoteGenerated: Anywhere
