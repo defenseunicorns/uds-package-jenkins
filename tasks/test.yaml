@@ -5,8 +5,7 @@ tasks:
         wait:
           cluster:
             kind: StatefulSet
-            # TODO Confirm this
-            name: jenkins-0
+            name: jenkins
             namespace: jenkins
 
   - name: ingress
@@ -15,5 +14,5 @@ tasks:
         wait:
           network:
             protocol: https
-            address: jenkins.uds.dev
+            address: jenkins.uds.dev/login
             code: 200

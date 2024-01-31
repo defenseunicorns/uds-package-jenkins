@@ -12,4 +12,4 @@ tasks:
   - name: jenkins-package
     description: Create the UDS Jenkins Zarf Package
     actions:
-      - cmd: zarf package create --confirm --no-progress --architecture=${ZARF_ARCHITECTURE} --flavor ${FLAVOR} 
+      - cmd: zarf package create --confirm --no-progress --architecture=${ZARF_ARCHITECTURE}
