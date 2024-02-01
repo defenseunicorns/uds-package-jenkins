@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [4.11.0-uds.1](https://github.com/defenseunicorns/uds-package-jenkins/compare/v4.11.0-uds.0...v4.11.0-uds.1) (2024-02-01)
+## [4.12.0-uds.0](https://github.com/defenseunicorns/uds-package-jenkins/compare/v4.11.0-uds.0...v4.12.0-uds.0) (2024-02-01)
 
 
 ### Features
