@@ -4,7 +4,7 @@ metadata:
   name: jenkins
   description: "UDS Jenkins package"
   # x-release-please-start-version
-  version: "4.3.9-uds.0"
+  version: "4.11.0-uds.0"
   # x-release-please-end
   architecture: amd64
 
@@ -24,7 +24,7 @@ components:
   #     namespace: jenkins
   #     url: https://repo1.dso.mil/big-bang/product/community/jenkins.git
   #     gitPath: chart
-  #     version: "4.3.9-bb.0"
+  #     version: "4.11.0-bb.0"
   #     valuesFiles:
   #       - values/jenkins-values.yaml
   #   - name: uds-jenkins-config
@@ -43,7 +43,7 @@ components:
     - name: jenkins
       namespace: jenkins
       url: https://charts.jenkins.io
-      version: 4.12.0
+      version: 4.11.0
       repoName: jenkins
       releaseName: jenkins
       valuesFiles:

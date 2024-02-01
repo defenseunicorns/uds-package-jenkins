@@ -1,3 +1,3 @@
 # image:
 #   repository: jenkins
-#   tag: 4.3.9-{{ .Values.edition }}
+#   tag: 4.11.0-{{ .Values.edition }}
