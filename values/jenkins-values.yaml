@@ -41,7 +41,7 @@ controller:
     - cloudbees-folder:6.901.vb_4c7a_da_75da_3
     - commons-lang3-api:3.13.0-62.v7d18e55f51e2
     - commons-text-api:1.11.0-95.v22a_d30ee5d36
-    - configuration-as-code:1625.v27444588cc3d
+    - configuration-as-code:1775.v810dc950b_514
     - credentials:1319.v7eb_51b_3a_c97b_
     - display-url-api:2.200.vb_9327d658781
     - durable-task:547.vd1ea_007d100c
@@ -57,7 +57,7 @@ controller:
     - jaxb:2.3.9-1
     - json-api:20231013-17.v1c97069404b_e
     - kubernetes-client-api:6.10.0-240.v57880ce8b_0b_2
-    - kubernetes-credentials:0.10.0
+    - kubernetes-credentials:0.11
     - kubernetes:4186.v1d804571d5d4
     - mailer:463.vedf8358e006b_
     - metrics:4.2.21-449.v6960d7c54c69
@@ -87,7 +87,7 @@ controller:
     - workflow-api:1291.v51fd2a_625da_7
     - workflow-basic-steps:1042.ve7b_140c4a_e0c
     - workflow-cps:3853.vb_a_490d892963
-    - workflow-durable-task-step:1317.v5337e0c1fe28
+    - workflow-durable-task-step:1322.v63864b_7a_e384
     - workflow-job:1400.v7fd111b_ec82f
     - workflow-multibranch:773.vc4fe1378f1d5
     - workflow-scm-step:415.v434365564324

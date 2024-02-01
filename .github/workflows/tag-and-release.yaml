@@ -24,9 +24,6 @@ jobs:
     if: ${{ needs.tag-new-version.outputs.release_created == 'true' }}
     runs-on: ubuntu-latest
     name: Publish package
-    strategy:
-      matrix:
-        flavor: [upstream-ce, registry1]
 
     permissions:
       contents: read

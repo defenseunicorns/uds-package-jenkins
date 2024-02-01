@@ -11,10 +11,11 @@ spec:
           app.kubernetes.io/name: jenkins
         gateway: tenant
         host: jenkins
-        # TODO: change to Jenkins's port number
         port: 8080
-    # allow:
-    #   - direction: Egress
-    #     podLabels:
-    #       app: jenkins
-    #     remoteGenerated: Anywhere
+    allow:
+      # TODO: Restrict more
+      - direction: Egress
+        podLabels:
+          app.kubernetes.io/name: jenkins
+        port: 443
+        description: "Jenkins-plugins"
