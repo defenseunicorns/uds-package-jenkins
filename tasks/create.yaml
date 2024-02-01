@@ -1,7 +1,3 @@
-variables:
-  - name: FLAVOR
-    default: "registry1"
-
 tasks:
   - name: jenkins-test-bundle
     description: Create the UDS bundle with Jenkins and its dependencies
