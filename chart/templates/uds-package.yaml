@@ -13,7 +13,6 @@ spec:
         host: jenkins
         port: 8080
     allow:
-      # TODO: Restrict more
       - direction: Egress
         podLabels:
           app.kubernetes.io/name: jenkins
