@@ -16,7 +16,7 @@ tasks:
         cmd: |
           set -e
           ZARF_ARCHITECTURE=amd64 uds run -f tasks/create.yaml jenkins-package --no-progress
-      
+
       - description: Publish the packages
         cmd: |
           set -e
