@@ -4,6 +4,13 @@ metadata:
   name: jenkins
   namespace: {{ .Release.Namespace }}
 spec:
+  {{- if .Values.sso }}
+  sso:
+    - name: Jenkins SSO
+      clientId: uds-core-jenkins
+      redirectUris:
+        - "https://jenkins.{{ .Values.domain }}/users/auth/openid_connect/callback"
+  {{- end }}
   network:
     expose:
       - service: jenkins

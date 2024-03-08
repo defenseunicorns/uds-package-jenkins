@@ -5,6 +5,12 @@ controller:
     configAutoReload:
       image: "registry1.dso.mil/ironbank/kiwigrid/k8s-sidecar:1.25.3"
   jenkinsUrl: https://jenkins.###ZARF_VAR_DOMAIN###
+  admin:
+    # -- Admin username created as a secret if `controller.admin.createSecret` is true
+    username: "admin"
+    # -- Admin password created as a secret if `controller.admin.createSecret` is true
+    # @default -- <random password>
+    password: "admin"
   disableRememberMe: true
   resources:
     requests:
@@ -56,6 +62,7 @@ controller:
     - javax-activation-api:1.2.0-6
     - jaxb:2.3.9-1
     - json-api:20231013-17.v1c97069404b_e
+    - keycloak:2.3.2
     - kubernetes-client-api:6.10.0-240.v57880ce8b_0b_2
     - kubernetes-credentials:0.11
     - kubernetes:4186.v1d804571d5d4
@@ -64,6 +71,7 @@ controller:
     - mina-sshd-api-common:2.12.0-90.v9f7fb_9fa_3d3b_
     - mina-sshd-api-core:2.12.0-90.v9f7fb_9fa_3d3b_
     - okhttp-api:4.11.0-172.vda_da_1feeb_c6e
+    - oic-auth:2.6
     - pipeline-build-step:540.vb_e8849e1a_b_d8
     - pipeline-groovy-lib:704.vc58b_8890a_384
     - pipeline-input-step:489.v4b_70b_ff92d67
@@ -95,12 +103,22 @@ controller:
     - workflow-support:865.v43e78cc44e0d
   overwritePlugins: true
   JCasC:
-    defaultConfig: true
-
-    configScripts:
-      main: |-
-        jenkins:
-          systemMessage: "Jenkins configured automatically by Jenkins Configuration as Code (JCasC) Plugin.\n\n"
+    defaultConfig: false
+    securityRealm: |-
+      oic:
+        clientId: "uds-core-jenkins"
+        clientSecret: "###ZARF_VAR_JENKINS_CLIENT_SECRET###"
+        wellKnownOpenIDConfigurationUrl: "https://sso.###ZARF_VAR_DOMAIN###/realms/uds"
+        tokenServerUrl: "https://sso.###ZARF_VAR_DOMAIN###/realms/uds/protocol/openid-connect/token"
+        authorizationServerUrl: "https://sso.###ZARF_VAR_DOMAIN###/realms/uds/protocol/openid-connect/auth"
+        scopes: "openid profile"
+        disableSslVerification: false
+        endSessionEndpoint: "https://sso.###ZARF_VAR_DOMAIN###/realms/uds/protocol/openid-connect/logout"
+        escapeHatchEnabled: false
+        logoutFromOpenidProvider: true
+        userNameField: "preferred_username"
+        emailFieldName: "email"
+        groupsFieldName: "groups"
   probes:
     startupProbe:
       periodSeconds: 10
