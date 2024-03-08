@@ -104,21 +104,24 @@ controller:
   overwritePlugins: true
   JCasC:
     defaultConfig: false
-    securityRealm: |-
-      oic:
-        clientId: "uds-core-jenkins"
-        clientSecret: "###ZARF_VAR_JENKINS_CLIENT_SECRET###"
-        wellKnownOpenIDConfigurationUrl: "https://sso.###ZARF_VAR_DOMAIN###/realms/uds"
-        tokenServerUrl: "https://sso.###ZARF_VAR_DOMAIN###/realms/uds/protocol/openid-connect/token"
-        authorizationServerUrl: "https://sso.###ZARF_VAR_DOMAIN###/realms/uds/protocol/openid-connect/auth"
-        scopes: "openid profile"
-        disableSslVerification: false
-        endSessionEndpoint: "https://sso.###ZARF_VAR_DOMAIN###/realms/uds/protocol/openid-connect/logout"
-        escapeHatchEnabled: false
-        logoutFromOpenidProvider: true
-        userNameField: "preferred_username"
-        emailFieldName: "email"
-        groupsFieldName: "groups"
+    configScripts:
+      keycloak: |-
+        jenkins:
+          securityRealm:
+            oic:
+              clientId: "uds-core-jenkins"
+              clientSecret: "###ZARF_VAR_JENKINS_CLIENT_SECRET###"
+              wellKnownOpenIDConfigurationUrl: "https://sso.###ZARF_VAR_DOMAIN###/realms/uds"
+              tokenServerUrl: "https://sso.###ZARF_VAR_DOMAIN###/realms/uds/protocol/openid-connect/token"
+              authorizationServerUrl: "https://sso.###ZARF_VAR_DOMAIN###/realms/uds/protocol/openid-connect/auth"
+              scopes: "openid profile"
+              disableSslVerification: false
+              endSessionEndpoint: "https://sso.###ZARF_VAR_DOMAIN###/realms/uds/protocol/openid-connect/logout"
+              escapeHatchEnabled: false
+              logoutFromOpenidProvider: true
+              userNameField: "preferred_username"
+              emailFieldName: "email"
+              groupsFieldName: "groups"
   probes:
     startupProbe:
       periodSeconds: 10
