@@ -4,6 +4,13 @@ metadata:
   name: jenkins
   namespace: {{ .Release.Namespace }}
 spec:
+  {{- if .Values.sso }}
+  sso:
+    - name: Jenkins SSO
+      clientId: uds-core-jenkins
+      redirectUris:
+        - "https://jenkins.{{ .Values.domain }}/securityRealm/finishLogin"
+  {{- end }}
   network:
     expose:
       - service: jenkins
@@ -13,8 +20,15 @@ spec:
         host: jenkins
         port: 8080
     allow:
+      - direction: Ingress
+        remoteGenerated: IntraNamespace
+      - direction: Egress
+        remoteGenerated: IntraNamespace
       - direction: Egress
         podLabels:
           app.kubernetes.io/name: jenkins
         port: 443
-        description: "Jenkins-plugins"
+        description: "Jenkins-plugins & SSO"
+      - direction: Egress
+        # todo: this is over permissive, need to scope it down
+        remoteGenerated: KubeAPI
