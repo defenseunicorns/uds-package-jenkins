@@ -1,16 +1,15 @@
 controller:
-  image: "registry1.dso.mil/ironbank/opensource/jenkins/jenkins"
-  tag: "2.442"
+  image: 
+    registry: "registry1.dso.mil"
+    repository: "ironbank/opensource/jenkins/jenkins"
+    tag: "2.448"
   sidecars:
     configAutoReload:
-      image: "registry1.dso.mil/ironbank/kiwigrid/k8s-sidecar:1.25.3"
+      image: 
+        registry: "registry1.dso.mil"
+        repository: "ironbank/kiwigrid/k8s-sidecar"
+        tag: "1.26.0"
   jenkinsUrl: https://jenkins.###ZARF_VAR_DOMAIN###
-  admin:
-    # -- Admin username created as a secret if `controller.admin.createSecret` is true
-    username: "admin"
-    # -- Admin password created as a secret if `controller.admin.createSecret` is true
-    # @default -- <random password>
-    password: "admin"
   disableRememberMe: true
   resources:
     requests:
@@ -103,7 +102,7 @@ controller:
     - workflow-support:865.v43e78cc44e0d
   overwritePlugins: true
   JCasC:
-    defaultConfig: false
+    defaultConfig: true
     configScripts:
       keycloak: |-
         jenkins:
@@ -133,8 +132,12 @@ controller:
 
 agent:
   enabled: true
-  image: "registry1.dso.mil/ironbank/opensource/jenkins/inbound-agent"
-  tag: "3148.v532a_7e715ee3-1"
+  jnlpregistry: registry1.dso.mil
+  image:
+    # -- Repository to pull the agent jnlp image from
+    repository: "ironbank/opensource/jenkins/inbound-agent"
+    # -- Tag of the image to pull
+    tag: "3186.vc3b_7249b_87eb_-1"
   resources:
     requests:
       cpu: "512m"
@@ -151,8 +154,10 @@ helmtest:
   # A testing framework for bash
   bats:
     # Bash Automated Testing System (BATS)
-    image: "registry1.dso.mil/ironbank/opensource/bats/bats"
-    tag: "v1.10.0-ubi9"
+    image:
+      registry: "registry1.dso.mil"
+      repository: "ironbank/opensource/bats/bats"
+      tag: "v1.10.0-ubi9"
 
 monitoring:
   enabled: false

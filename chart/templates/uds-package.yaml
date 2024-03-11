@@ -9,7 +9,7 @@ spec:
     - name: Jenkins SSO
       clientId: uds-core-jenkins
       redirectUris:
-        - "https://jenkins.{{ .Values.domain }}/users/auth/openid_connect/callback"
+        - "https://jenkins.{{ .Values.domain }}/securityRealm/finishLogin"
   {{- end }}
   network:
     expose:

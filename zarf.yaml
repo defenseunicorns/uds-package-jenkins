@@ -44,16 +44,16 @@ components:
     - name: jenkins
       namespace: jenkins
       url: https://charts.jenkins.io
-      version: 4.11.0
+      version: 5.1.0
       repoName: jenkins
       releaseName: jenkins
       valuesFiles:
         - values/common.yaml
         - values/upstream.yaml
     images:
-      - registry1.dso.mil/ironbank/opensource/jenkins/jenkins:2.442
-      - registry1.dso.mil/ironbank/opensource/jenkins/inbound-agent:3148.v532a_7e715ee3-1
-      - registry1.dso.mil/ironbank/kiwigrid/k8s-sidecar:1.25.3
+      - registry1.dso.mil/ironbank/opensource/jenkins/jenkins:2.448
+      - registry1.dso.mil/ironbank/opensource/jenkins/inbound-agent:3186.vc3b_7249b_87eb_-1
+      - registry1.dso.mil/ironbank/kiwigrid/k8s-sidecar:1.26.0
       - registry1.dso.mil/ironbank/opensource/bats/bats:v1.10.0-ubi9
 
   # Note: BB chart hasn't been updated since April-7-2023
