@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.12.0-uds.1](https://github.com/defenseunicorns/uds-package-jenkins/compare/v4.12.0-uds.0...v4.12.0-uds.1) (2024-03-11)
+
+
+### Features
+
+* add sso implementation ([2aa3892](https://github.com/defenseunicorns/uds-package-jenkins/commit/2aa38928e42c2b1597b579d5cfb18b0d65ec3cd4))
+* updated chart, fixed redirecturi, and got sso working ([162b201](https://github.com/defenseunicorns/uds-package-jenkins/commit/162b201aba5ee3b75da5ceb49e964935bb9b9c32))
+
+
+### Bug Fixes
+
+* agentURL and netpols ([604b0ff](https://github.com/defenseunicorns/uds-package-jenkins/commit/604b0ff0ffa05eedc339d99747efd2357e5a03f7))
+* maybe ([c678091](https://github.com/defenseunicorns/uds-package-jenkins/commit/c6780912e88f8cd6ebcec161a463fed86ab066c3))
+
+
+### Miscellaneous
+
+* add renovate for zarf ([48b9e14](https://github.com/defenseunicorns/uds-package-jenkins/commit/48b9e1478864853dc56d283ffd5d4a87bee4d448))
+* lint ([fc5c493](https://github.com/defenseunicorns/uds-package-jenkins/commit/fc5c4938693ca2c1938e5012da775e2fa0d9e038))
+* removing completed todo comment ([da5be62](https://github.com/defenseunicorns/uds-package-jenkins/commit/da5be62a46177a698d2ba7f06ec5fc6b71a30ef4))
+* update yaml ignore path for pre commit ([84ac229](https://github.com/defenseunicorns/uds-package-jenkins/commit/84ac2295cc307fcb7ec3dafd7cc302117dd54840))
+
 ## [4.12.0-uds.0](https://github.com/defenseunicorns/uds-package-jenkins/compare/v4.11.0-uds.0...v4.12.0-uds.0) (2024-02-01)
 
 
