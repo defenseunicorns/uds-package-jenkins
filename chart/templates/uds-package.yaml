@@ -30,5 +30,10 @@ spec:
         port: 443
         description: "Jenkins-plugins & SSO"
       - direction: Egress
+        podLabels:
+          jenkins/label: jenkins-jenkins-agent
+        port: 443
+        description: "Jenkins-jobs phone home"
+      - direction: Egress
         # todo: this is over permissive, need to scope it down
         remoteGenerated: KubeAPI
