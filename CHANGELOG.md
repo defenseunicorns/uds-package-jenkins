@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.1.0-uds.1](https://github.com/defenseunicorns/uds-package-jenkins/compare/v5.1.0-uds.0...v5.1.0-uds.1) (2024-04-03)
+
+
+### Bug Fixes
+
+* job pods phone home ([6eae653](https://github.com/defenseunicorns/uds-package-jenkins/commit/6eae65385dcef393bd253baae9e53d250ff36d37))
+
 ## [5.1.0-uds.0](https://github.com/defenseunicorns/uds-package-jenkins/compare/v4.12.0-uds.0...v4.12.0-uds.1) (2024-03-11)
 
 
