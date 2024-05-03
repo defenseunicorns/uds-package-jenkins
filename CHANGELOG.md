@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.1.8-uds.1](https://github.com/defenseunicorns/uds-package-jenkins/compare/v5.1.8-uds.0...v5.1.8-uds.1) (2024-05-03)
+
+
+### Bug Fixes
+
+* bad copy paste ([c498f45](https://github.com/defenseunicorns/uds-package-jenkins/commit/c498f45b2682fd7156ffe1135c09950cc25924af))
+
 ## [5.1.8-uds.0](https://github.com/defenseunicorns/uds-package-jenkins/compare/v5.1.0-uds.1...v5.1.8-uds.0) (2024-05-03)
 
 
