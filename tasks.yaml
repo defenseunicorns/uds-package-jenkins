@@ -1,36 +1,59 @@
 includes:
   - cleanup: ./tasks/cleanup.yaml
-  - create: ./tasks/create.yaml
-  - deploy: ./tasks/deploy.yaml
-  - setup: ./tasks/setup.yaml
   - test: ./tasks/test.yaml
+  - create: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.4.2/tasks/create.yaml
+  - lint: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.4.2/tasks/lint.yaml
+  - pull: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.4.2/tasks/pull.yaml
+  - deploy: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.4.2/tasks/deploy.yaml
+  - setup: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.4.2/tasks/setup.yaml
 
 tasks:
-  - name: setup-cluster
+  - name: default
+    description: Create K3D Cluster with UDS-Core + Jenkins
     actions:
+      - task: create-jenkins-test-bundle
       - task: setup:k3d-test-cluster
+      - task: deploy:test-bundle
 
-  - name: create-package
+  - name: create-jenkins-package
+    description: Create UDS Jenkins Package
     actions:
-      - task: create:jenkins-package
+      - task: create:package
+        with:
+          options: "--skip-sbom"
 
-  - name: create-test-bundle
+  - name: create-jenkins-test-bundle
+    description: Create a local UDS Jenkins bundle
     actions:
-      - task: create:jenkins-test-bundle
+      - task: create-jenkins-package
+      - task: create:test-bundle
 
-  - name: deploy-package
+  - name: create-jenkins-latest-release-bundle
+    description: Create UDS Jenkins bundle based on the latest release
     actions:
-      - task: deploy:jenkins-package
+      - task: pull:latest-package-release
+        with:
+          spoof_release: "true"
+      - task: create:test-bundle
 
-  - name: deploy-test-bundle
-    actions:
-      - task: deploy:jenkins-test-bundle
+# CI will execute the following (via uds-common/.github/actions/test) so they need to be here with these names
 
   - name: test-package
+    description: Test the Jenkins package from the current branch
     actions:
+      - task: create-jenkins-test-bundle
+      - task: setup:k3d-test-cluster
+      - task: deploy:test-bundle
       - task: test:health-check
       - task: test:ingress
 
-  - name: cleanup
+  - name: test-upgrade
+    description: Test an upgrade from the latest released package to the current branch
     actions:
-      - task: cleanup:destroy
+      - task: create-jenkins-latest-release-bundle
+      - task: setup:k3d-test-cluster
+      - task: deploy:test-bundle
+      - task: create-jenkins-test-bundle
+      - task: deploy:test-bundle
+      - task: test:health-check
+      - task: test:ingress
