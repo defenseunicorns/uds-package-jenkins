@@ -1,23 +1,55 @@
-variables:
-  - name: TARGET_REPO
-    default: oci://ghcr.io/defenseunicorns/packages/uds
-
-  - name: VERSION
-    description: The version of the package to build
-    # x-release-please-start-version
-    default: "5.1.0-uds.1"
-    # x-release-please-end
+includes:
+  - dependencies: ./dependencies.yaml
+  - create: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.4.2/tasks/create.yaml
+  - publish: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.4.2/tasks/publish.yaml
 
 tasks:
   - name: package
     description: Build and publish the packages
     actions:
-      - description: Create the packages
-        cmd: |
-          set -e
-          ZARF_ARCHITECTURE=amd64 uds run -f tasks/create.yaml jenkins-package --no-progress
+      - description: Create the AMD64 package
+        task: create:package
+        with:
+          architecture: amd64
+
+      - description: Create the ARM64 package
+        task: create:package
+        with:
+          architecture: arm64
 
       - description: Publish the packages
-        cmd: |
-          set -e
-          zarf package publish zarf-package-jenkins-amd64-${VERSION}.tar.zst ${TARGET_REPO}
+        task: publish:package
+        with:
+          # x-release-please-start-version
+          version: "5.1.0-uds.1"
+          # x-release-please-end
+
+  - name: test-bundle
+    description: Build and publish the test bundles
+    actions:
+      - description: Create the ARM64 deps package
+        task: dependencies:create
+        with:
+          architecture: amd64
+
+      - description: Create the ARM64 deps package
+        task: dependencies:create
+        with:
+          architecture: arm64
+
+      - description: Create the AMD64 bundle
+        task: create:test-bundle
+        with:
+          architecture: amd64
+
+      - description: Create the ARM64 bundle
+        task: create:test-bundle
+        with:
+          architecture: arm64
+
+      - description: Publish the bundles
+        task: publish:test-bundle
+        with:
+          # x-release-please-start-version
+          version: "5.1.0-uds.1"
+          # x-release-please-end
