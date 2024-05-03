@@ -33,23 +33,23 @@ components:
               - name: JENKINS_CLIENT_SECRET
                 sensitive: true
     charts:
-    - name: uds-jenkins-config
-      namespace: jenkins
-      version: 0.1.0
-      localPath: chart
+      - name: uds-jenkins-config
+        namespace: jenkins
+        version: 0.1.0
+        localPath: chart
   - name: jenkins
     required: true
     description: "Deploy jenkins"
     charts:
-    - name: jenkins
-      namespace: jenkins
-      url: https://charts.jenkins.io
-      version: 5.1.8
-      repoName: jenkins
-      releaseName: jenkins
-      valuesFiles:
-        - values/common.yaml
-        - values/upstream.yaml
+      - name: jenkins
+        namespace: jenkins
+        url: https://charts.jenkins.io
+        version: 5.1.8
+        repoName: jenkins
+        releaseName: jenkins
+        valuesFiles:
+          - values/common.yaml
+          - values/upstream.yaml
     images:
       - registry1.dso.mil/ironbank/opensource/jenkins/jenkins:2.440.3-lts
       - registry1.dso.mil/ironbank/opensource/jenkins/inbound-agent:3186.vc3b_7249b_87eb_-1
