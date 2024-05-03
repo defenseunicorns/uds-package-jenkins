@@ -1,4 +1,4 @@
-name: Publish UDS Package Jira
+name: Publish UDS Package Jenkins
 
 on:
   push:
