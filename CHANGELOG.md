@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.1.8-uds.0](https://github.com/defenseunicorns/uds-package-jenkins/compare/v5.1.0-uds.1...v5.1.8-uds.0) (2024-05-03)
+
+
+### Features
+
+* Jenkins works again ([b8e14ce](https://github.com/defenseunicorns/uds-package-jenkins/commit/b8e14ce88a4e5404d8ae5dd1a18795f28caab49f))
+* updated workflows and linter ([ff9ed06](https://github.com/defenseunicorns/uds-package-jenkins/commit/ff9ed06806e50732533f987fffb01039ed332faa))
+
+
+### Bug Fixes
+
+* added missing file ([c97d374](https://github.com/defenseunicorns/uds-package-jenkins/commit/c97d374d781610f44876030fea6eaa7330e7a72a))
+* lint ([d7748d8](https://github.com/defenseunicorns/uds-package-jenkins/commit/d7748d85c5e721dd8612216c1e101da3843f3fb0))
+* runner ([b956b71](https://github.com/defenseunicorns/uds-package-jenkins/commit/b956b71c8d0edc7d625c8cc81ff2ebac31f9b6ca))
+
+
+### Miscellaneous
+
+* release 5.1.8-uds.0 ([a2a0bad](https://github.com/defenseunicorns/uds-package-jenkins/commit/a2a0bade8f2d510f8fe3efb5892f04ed08543bf1))
+* remove upstream references ([f138297](https://github.com/defenseunicorns/uds-package-jenkins/commit/f13829760bf95db51e970620416730cc62c6539f))
+* Updating tasks ([c14cee2](https://github.com/defenseunicorns/uds-package-jenkins/commit/c14cee2241b4000473bdc9a7a0f9275e8de13b63))
+
 ## [5.1.0-uds.1](https://github.com/defenseunicorns/uds-package-jenkins/compare/v5.1.0-uds.0...v5.1.0-uds.1) (2024-04-03)
 
 
