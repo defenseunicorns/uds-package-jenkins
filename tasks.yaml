@@ -36,6 +36,17 @@ tasks:
           spoof_release: "true"
       - task: create:test-bundle
 
+  - name: deploy-jenkins-test-bundle
+    description: Deploy the Jenkins test bundle to local cluster
+    actions:
+      - task: deploy:test-bundle
+
+  - name: local-all
+    description: Create then deploy local jenkins bundle
+    actions:
+      - task: create-jenkins-test-bundle
+      - task: deploy:test-bundle
+
 # CI will execute the following (via uds-common/.github/actions/test) so they need to be here with these names
 
   - name: test-package
