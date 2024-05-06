@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.1.8-uds.2](https://github.com/defenseunicorns/uds-package-jenkins/compare/v5.1.8-uds.1...v5.1.8-uds.2) (2024-05-06)
+
+
+### Bug Fixes
+
+* fixed first time login for Jenkins ([280679d](https://github.com/defenseunicorns/uds-package-jenkins/commit/280679dc7c9b7e49b57619de79c19e5ef1e8542f))
+
 ## [5.1.8-uds.1](https://github.com/defenseunicorns/uds-package-jenkins/compare/v5.1.8-uds.0...v5.1.8-uds.1) (2024-05-03)
 
 
