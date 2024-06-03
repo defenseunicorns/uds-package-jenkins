@@ -17,40 +17,24 @@ variables:
 components:
   - name: jenkins-config
     required: true
-    description: "Deploy jenkins config"
-    actions:
-      onDeploy:
-        after:
-          - wait:
-              cluster:
-                kind: package
-                name: jenkins
-                namespace: jenkins
-                condition: "'{.status.phase}'=Ready"
-          - cmd: zarf tools kubectl get secrets sso-client-uds-core-jenkins -n jenkins -o=jsonpath='{.data.secret}' | base64 -d
-            mute: true
-            setVariables:
-              - name: JENKINS_CLIENT_SECRET
-                sensitive: true
-    charts:
-      - name: uds-jenkins-config
-        namespace: jenkins
-        version: 0.1.0
-        localPath: chart
+    description: "SSO secret for jenkins"
+    import:
+      path: common
   - name: jenkins
     required: true
-    description: "Deploy jenkins"
+    description: "Deploy jenkins with registry1 images"
+    import:
+      path: common
+    only:
+      flavor: registry1
+      cluster:
+        architecture: amd64
     charts:
       - name: jenkins
-        namespace: jenkins
-        url: https://charts.jenkins.io
-        version: 5.1.8
-        repoName: jenkins
-        releaseName: jenkins
         valuesFiles:
-          - values/common.yaml
+          - values/registry1.yaml
     images:
-      - registry1.dso.mil/ironbank/opensource/jenkins/jenkins:2.440.3-lts
+      - registry1.dso.mil/ironbank/opensource/jenkins/jenkins:2.452.1-lts
       - registry1.dso.mil/ironbank/opensource/jenkins/inbound-agent:3186.vc3b_7249b_87eb_-1
-      - registry1.dso.mil/ironbank/kiwigrid/k8s-sidecar:1.26.1
+      - registry1.dso.mil/ironbank/kiwigrid/k8s-sidecar:1.27.2
       - registry1.dso.mil/ironbank/opensource/bats/bats:v1.10.0-ubi9

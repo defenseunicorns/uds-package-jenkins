@@ -1,0 +1,27 @@
+controller:
+  image:
+    registry: "registry1.dso.mil"
+    repository: "ironbank/opensource/jenkins/jenkins"
+    tag: "2.452.1-lts"
+  sidecars:
+    configAutoReload:
+      image:
+        registry: "registry1.dso.mil"
+        repository: "ironbank/kiwigrid/k8s-sidecar"
+        tag: "1.27.2"
+
+agent:
+  image:
+    # -- Repository to pull the agent jnlp image from
+    repository: "registry1.dso.mil/ironbank/opensource/jenkins/inbound-agent"
+    # -- Tag of the image to pull
+    tag: "3186.vc3b_7249b_87eb_-1"
+
+helmtest:
+  # A testing framework for bash
+  bats:
+    # Bash Automated Testing System (BATS)
+    image:
+      registry: "registry1.dso.mil"
+      repository: "ironbank/opensource/bats/bats"
+      tag: "v1.10.0-ubi9"

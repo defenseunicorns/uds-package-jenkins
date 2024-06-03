@@ -1,14 +1,4 @@
 controller:
-  image:
-    registry: "registry1.dso.mil"
-    repository: "ironbank/opensource/jenkins/jenkins"
-    tag: "2.440.3-lts"
-  sidecars:
-    configAutoReload:
-      image:
-        registry: "registry1.dso.mil"
-        repository: "ironbank/kiwigrid/k8s-sidecar"
-        tag: "1.26.1"
   jenkinsUrl: https://jenkins.###ZARF_VAR_DOMAIN###
   disableRememberMe: true
   resources:
@@ -26,11 +16,11 @@ controller:
       cpu: "2000m"
       memory: "8192Mi"
   installPlugins:
-    - kubernetes:4209.vc646b_71e5269
+    - kubernetes:4238.v41b_3ef14a_5d8
     - workflow-aggregator:596.v8c21c963d92d
-    - git:5.2.1
-    - configuration-as-code:1775.v810dc950b_514
-    - oic-auth:4.257.v5360e8489e8b_
+    - git:5.2.2
+    - configuration-as-code:1810.v9b_c30a_249a_4c
+    - oic-auth:4.269.va_7526f34f306
   overwritePlugins: true
   JCasC:
     defaultConfig: true
@@ -64,11 +54,6 @@ controller:
 agent:
   enabled: true
   jenkinsUrl: https://jenkins.###ZARF_VAR_DOMAIN###
-  image:
-    # -- Repository to pull the agent jnlp image from
-    repository: "registry1.dso.mil/ironbank/opensource/jenkins/inbound-agent"
-    # -- Tag of the image to pull
-    tag: "3186.vc3b_7249b_87eb_-1"
   resources:
     requests:
       cpu: "512m"
@@ -80,15 +65,6 @@ agent:
 persistence:
   enabled: true
 #  storageClass: "your-storage-class-here"
-
-helmtest:
-  # A testing framework for bash
-  bats:
-    # Bash Automated Testing System (BATS)
-    image:
-      registry: "registry1.dso.mil"
-      repository: "ironbank/opensource/bats/bats"
-      tag: "v1.10.0-ubi9"
 
 monitoring:
   enabled: false

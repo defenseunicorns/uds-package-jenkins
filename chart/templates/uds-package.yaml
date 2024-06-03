@@ -4,7 +4,7 @@ metadata:
   name: jenkins
   namespace: {{ .Release.Namespace }}
 spec:
-  {{- if .Values.sso }}
+  {{- if .Values.sso.enabled }}
   sso:
     - name: Jenkins SSO
       clientId: uds-core-jenkins
