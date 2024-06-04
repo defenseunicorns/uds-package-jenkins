@@ -1,0 +1,40 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/defenseunicorns/zarf/main/zarf.schema.json
+kind: ZarfPackageConfig
+metadata:
+  name: jenkins-common
+  description: "UDS jenkins Common Package"
+
+components:
+  - name: jenkins-config
+    required: true
+    description: "SSO secret for jenkins"
+    charts:
+      - name: uds-jenkins-config
+        namespace: jenkins
+        version: 0.1.0
+        localPath: ../chart
+    actions:
+      onDeploy:
+        after:
+          - wait:
+              cluster:
+                kind: package
+                name: jenkins
+                namespace: jenkins
+                condition: "'{.status.phase}'=Ready"
+          - cmd: zarf tools kubectl get secrets sso-client-uds-core-jenkins -n jenkins -o=jsonpath='{.data.secret}' | base64 -d
+            mute: true
+            setVariables:
+              - name: JENKINS_CLIENT_SECRET
+                sensitive: true
+  - name: jenkins
+    required: true
+    charts:
+      - name: jenkins
+        namespace: jenkins
+        url: https://charts.jenkins.io
+        version: 5.1.26
+        repoName: jenkins
+        releaseName: jenkins
+        valuesFiles:
+          - ../values/common.yaml
