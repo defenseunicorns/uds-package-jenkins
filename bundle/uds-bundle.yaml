@@ -3,12 +3,12 @@ metadata:
   name: jenkins-test
   description: A UDS bundle for deploying jenkins and it's dependencies on a development cluster
   # x-release-please-start-version
-  version: 5.1.8-uds.2
+  version: 5.2.0-uds.2
   # x-release-please-end
 
 packages:
   - name: jenkins
     path: ../
     # x-release-please-start-version
-    ref: 5.1.8-uds.2
+    ref: 5.2.0-uds.2
     # x-release-please-end
