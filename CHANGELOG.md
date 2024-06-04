@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.2.0-uds.2](https://github.com/defenseunicorns/uds-package-jenkins/compare/v5.1.8-uds.2...v5.2.0-uds.2) (2024-06-04)
+
+
+### Features
+
+* update jenkins 5.1.26, and updated repo to better mirror SWF ([20edaa1](https://github.com/defenseunicorns/uds-package-jenkins/commit/20edaa1e8f4666c5926984290fb88dd35b198fd0))
+
 ## [5.1.8-uds.2](https://github.com/defenseunicorns/uds-package-jenkins/compare/v5.1.8-uds.1...v5.1.8-uds.2) (2024-05-06)
 
 
