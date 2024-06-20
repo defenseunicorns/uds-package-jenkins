@@ -38,7 +38,7 @@ jobs:
     timeout-minutes: 25
     strategy:
       matrix:
-        flavor: [registry1]
+        flavor: [registry1, chainguard]
         type: [install, upgrade]
 
     steps:
