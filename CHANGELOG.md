@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.2.0-uds.0](https://github.com/defenseunicorns/uds-package-jenkins/compare/v5.1.26-uds.0...v5.2.0-uds.0) (2024-06-21)
+
+
+### Features
+
+* add chainguard flavor and update readme ([65ceb01](https://github.com/defenseunicorns/uds-package-jenkins/commit/65ceb01053bb96fd6116181f1be48a94f57828f5))
+* update jenkins chart and image ([dc3be27](https://github.com/defenseunicorns/uds-package-jenkins/commit/dc3be275363a97cd6b5dc257569cd82a24313b13))
+* update task files and add todo comment for image ([887010d](https://github.com/defenseunicorns/uds-package-jenkins/commit/887010d901ecb3eb07d32df8816f0a2a195bbbb4))
+
+
+### Bug Fixes
+
+* lint ([c12afbc](https://github.com/defenseunicorns/uds-package-jenkins/commit/c12afbc09d9aba4c13b6247f53702528c9876a4d))
+
+
+### Miscellaneous
+
+* **deps:** update jenkins support dependencies ([6e44372](https://github.com/defenseunicorns/uds-package-jenkins/commit/6e44372ceb2d69570cfcc2a003fd0fedbe27a1c5))
+
 ## [5.1.26-uds.0](https://github.com/defenseunicorns/uds-package-jenkins/compare/v5.1.8-uds.2...v5.1.26-uds.0) (2024-06-04)
 
 
