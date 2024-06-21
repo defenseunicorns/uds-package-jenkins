@@ -1,34 +1,34 @@
 includes:
   - cleanup: ./tasks/cleanup.yaml
   - test: ./tasks/test.yaml
-  - create: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.4.5/tasks/create.yaml
-  - lint: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.4.5/tasks/lint.yaml
-  - pull: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.4.5/tasks/pull.yaml
-  - deploy: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.4.5/tasks/deploy.yaml
-  - setup: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.4.5/tasks/setup.yaml
+  - create: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.6.0/tasks/create.yaml
+  - lint: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.6.0/tasks/lint.yaml
+  - pull: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.6.0/tasks/pull.yaml
+  - deploy: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.6.0/tasks/deploy.yaml
+  - setup: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.6.0/tasks/setup.yaml
 
 tasks:
   - name: default
     description: Create K3D Cluster with UDS-Core + Jenkins
     actions:
-      - task: create-jenkins-test-bundle
+      - task: create-test-bundle
       - task: setup:k3d-test-cluster
       - task: deploy:test-bundle
 
-  - name: create-jenkins-package
+  - name: create-package
     description: Create UDS Jenkins Package
     actions:
       - task: create:package
         with:
           options: "--skip-sbom"
 
-  - name: create-jenkins-test-bundle
+  - name: create-test-bundle
     description: Create a local UDS Jenkins bundle
     actions:
-      - task: create-jenkins-package
+      - task: create-package
       - task: create:test-bundle
 
-  - name: create-jenkins-latest-release-bundle
+  - name: create-latest-release-bundle
     description: Create UDS Jenkins bundle based on the latest release
     actions:
       - task: pull:latest-package-release
@@ -36,7 +36,7 @@ tasks:
           spoof_release: "true"
       - task: create:test-bundle
 
-  - name: deploy-jenkins-test-bundle
+  - name: deploy-test-bundle
     description: Deploy the Jenkins test bundle to local cluster
     actions:
       - task: deploy:test-bundle
@@ -44,7 +44,7 @@ tasks:
   - name: local-all
     description: Create then deploy local jenkins bundle
     actions:
-      - task: create-jenkins-test-bundle
+      - task: create-test-bundle
       - task: deploy:test-bundle
 
 # CI will execute the following (via uds-common/.github/actions/test) so they need to be here with these names
@@ -52,7 +52,7 @@ tasks:
   - name: test-package
     description: Test the Jenkins package from the current branch
     actions:
-      - task: create-jenkins-test-bundle
+      - task: create-test-bundle
       - task: setup:k3d-test-cluster
       - task: deploy:test-bundle
       - task: test:health-check
@@ -61,10 +61,10 @@ tasks:
   - name: test-upgrade
     description: Test an upgrade from the latest released package to the current branch
     actions:
-      - task: create-jenkins-latest-release-bundle
+      - task: create-latest-release-bundle
       - task: setup:k3d-test-cluster
       - task: deploy:test-bundle
-      - task: create-jenkins-test-bundle
+      - task: create-test-bundle
       - task: deploy:test-bundle
       - task: test:health-check
       - task: test:ingress

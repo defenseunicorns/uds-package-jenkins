@@ -10,6 +10,7 @@ controller:
         repository: "chainguard/k8s-sidecar"
         tag: "latest"
 
+# TODO get a chainguard version of this image
 agent:
   image:
     # -- Repository to pull the agent jnlp image from
