@@ -22,7 +22,7 @@ components:
                 name: jenkins
                 namespace: jenkins
                 condition: "'{.status.phase}'=Ready"
-          - cmd: zarf tools kubectl get secrets sso-client-uds-core-jenkins -n jenkins -o=jsonpath='{.data.secret}' | base64 -d
+          - cmd: zarf tools kubectl get secrets sso-client-uds-package-jenkins -n jenkins -o=jsonpath='{.data.secret}' | base64 -d
             mute: true
             setVariables:
               - name: JENKINS_CLIENT_SECRET

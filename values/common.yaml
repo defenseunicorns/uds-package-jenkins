@@ -29,7 +29,7 @@ controller:
         jenkins:
           securityRealm:
             oic:
-              clientId: "uds-core-jenkins"
+              clientId: "uds-package-jenkins"
               clientSecret: "###ZARF_VAR_JENKINS_CLIENT_SECRET###"
               wellKnownOpenIDConfigurationUrl: "https://sso.###ZARF_VAR_DOMAIN###/realms/uds"
               tokenServerUrl: "https://sso.###ZARF_VAR_DOMAIN###/realms/uds/protocol/openid-connect/token"
