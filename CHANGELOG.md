@@ -2,24 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
-## [5.3.1-uds.0](https://github.com/defenseunicorns/uds-package-jenkins/compare/v5.3.1-uds.0...v5.3.1-uds.0) (2024-06-27)
-
-
-### Features
-
-* renamed flavor to unicorn ([7c9f782](https://github.com/defenseunicorns/uds-package-jenkins/commit/7c9f78238a0beb48c0c4ffe334069b73086c86b5))
-
-
-### Miscellaneous
-
-* release 5.3.1-uds.0 ([df80dec](https://github.com/defenseunicorns/uds-package-jenkins/commit/df80dec129ac076fbb38a1d2757295fd53f3eb3f))
-
 ## [5.3.1-uds.0](https://github.com/defenseunicorns/uds-package-jenkins/compare/v5.1.26-uds.0...v5.3.1-uds.0) (2024-06-21)
 
 
 ### Features
 
-* add chainguard flavor and update readme ([65ceb01](https://github.com/defenseunicorns/uds-package-jenkins/commit/65ceb01053bb96fd6116181f1be48a94f57828f5))
+* add unicorn flavor and update readme ([65ceb01](https://github.com/defenseunicorns/uds-package-jenkins/commit/65ceb01053bb96fd6116181f1be48a94f57828f5))
 * update jenkins chart and image ([dc3be27](https://github.com/defenseunicorns/uds-package-jenkins/commit/dc3be275363a97cd6b5dc257569cd82a24313b13))
 * update task files and add todo comment for image ([887010d](https://github.com/defenseunicorns/uds-package-jenkins/commit/887010d901ecb3eb07d32df8816f0a2a195bbbb4))
 
