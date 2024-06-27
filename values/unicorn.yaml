@@ -1,0 +1,19 @@
+controller:
+  image:
+    registry: "cgr.dev"
+    repository: "chainguard/jenkins"
+    tag: "latest"
+  sidecars:
+    configAutoReload:
+      image:
+        registry: "cgr.dev"
+        repository: "chainguard/k8s-sidecar"
+        tag: "latest"
+
+# TODO get a unicorn version of this image
+agent:
+  image:
+    # -- Repository to pull the agent jnlp image from
+    repository: "registry1.dso.mil/ironbank/opensource/jenkins/inbound-agent"
+    # -- Tag of the image to pull
+    tag: "3186.vc3b_7249b_87eb_-1"

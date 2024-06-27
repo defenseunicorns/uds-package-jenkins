@@ -38,28 +38,28 @@ jobs:
     timeout-minutes: 25
     strategy:
       matrix:
-        flavor: [registry1]
+        flavor: [registry1, unicorn]
         type: [install, upgrade]
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
 
       - name: Environment setup
-        uses: defenseunicorns/uds-common/.github/actions/setup@b2e8b25930c953ef893e7c787fe350f0d8679ee2 # v0.4.2
+        uses: defenseunicorns/uds-common/.github/actions/setup@0901c37366f37fea586768c79708e14e964e714e # v0.6.1
         with:
           registry1Username: ${{ secrets.IRON_BANK_ROBOT_USERNAME }}
           registry1Password: ${{ secrets.IRON_BANK_ROBOT_PASSWORD }}
           ghToken: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Test
-        uses: defenseunicorns/uds-common/.github/actions/test@b2e8b25930c953ef893e7c787fe350f0d8679ee2 # v0.4.2
+        uses: defenseunicorns/uds-common/.github/actions/test@0901c37366f37fea586768c79708e14e964e714e # v0.6.1
         with:
           flavor: ${{ matrix.flavor }}
           type: ${{ matrix.type }}
 
       - name: Save logs
         if: always()
-        uses: defenseunicorns/uds-common/.github/actions/save-logs@b2e8b25930c953ef893e7c787fe350f0d8679ee2 # v0.4.2
+        uses: defenseunicorns/uds-common/.github/actions/save-logs@0901c37366f37fea586768c79708e14e964e714e # v0.6.1
         with:
           suffix: ${{ matrix.type }}-${{ matrix.flavor }}-${{ github.run_id }}-${{ github.run_attempt }}

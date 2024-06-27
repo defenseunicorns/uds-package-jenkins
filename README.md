@@ -1,50 +1,36 @@
-# uds-package-jenkins
-Platform One Jenkins deployed via flux
+# 🚚 UDS Jenkins Zarf Package
 
-## Pre-req
-- Minimum compute requirements for single node deployment are at LEAST 64 GB RAM and 32 virtual CPU threads (aws `m6i.8xlarge` instance type should do)
-- k3d installed on machine
+[![Latest Release](https://img.shields.io/github/v/release/defenseunicorns/uds-package-jenkins)](https://github.com/defenseunicorns/uds-package-jenkins/releases)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/defenseunicorns/uds-package-jenkins/tag-and-release.yaml)](https://github.com/defenseunicorns/uds-package-jenkins/actions/workflows/tag-and-release.yaml)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/defenseunicorns/uds-package-jenkins/badge)](https://api.securityscorecards.dev/projects/github.com/defenseunicorns/uds-package-jenkins)
 
-## Deploy
+This package is designed to be deployed on [UDS Core](https://github.com/defenseunicorns/uds-core), and is based on the upstream [Jenkins](https://github.com/jenkinsci/helm-charts/tree/main/charts/jenkins) chart.
 
-### Use zarf to login to the needed registries i.e. registry1.dso.mil
+## Pre-requisites
 
-```bash
-# Download Zarf
-make build/zarf
+The Jenkins Package expects to be deployed on top of [UDS Core](https://github.com/defenseunicorns/uds-core).
 
-# Login to the registry
-set +o history
+## Flavors
 
-# registry1.dso.mil (To access registry1 images needed during build time)
-export REGISTRY1_USERNAME="YOUR-USERNAME-HERE"
-export REGISTRY1_TOKEN="YOUR-TOKEN-HERE"
-echo $REGISTRY1_TOKEN | build/zarf tools registry login registry1.dso.mil --username $REGISTRY1_USERNAME --password-stdin
+| Flavor | Description | Example Creation |
+| ------ | ----------- | ---------------- |
+| registry1 | Uses images from registry1.dso.mil within the package. | `zarf package create . -f registry1` |
+| unicorn | Uses images from cgr.dev within the package. | `zarf package create . -f unicorn` |
 
-set -o history
-```
+> [!IMPORTANT]
+> **NOTE:** To create the registry1 or the unicorn flavor you will need to be logged into Iron Bank - you can find instructions on how to do this in the [Big Bang Zarf Tutorial](https://docs.zarf.dev/tutorials/6-big-bang/#setup).
 
-### Build and Deploy Everything via Makefile and local package
+## Releases
 
-```bash
-# This will run make build/all, make cluster/reset, and make deploy/all. Follow the breadcrumbs in the Makefile to see what and how its doing it.
-make all
-```
+The released packages can be found in [ghcr](https://github.com/defenseunicorns/uds-package-jenkins/pkgs/container/packages%2Fuds%2Fjenkins).
 
-## Declare This Package In Your UDS Bundle
-Below is an example of how to use this projects zarf package in your UDS Bundle
+## UDS Tasks (for local dev and CI)
 
-```yaml
-kind: UDSBundle
-metadata:
-  name: example-bundle
-  description: An Example UDS Bundle
-  version: 0.0.1
-  architecture: amd64
+*For local dev, this requires you install [uds-cli](https://github.com/defenseunicorns/uds-cli?tab=readme-ov-file#install)
 
-zarf-packages:
-  # Jenkins
-  - name: jenkins
-    repository: ghcr.io/defenseunicorns/uds-package/jenkins
-    ref: x.x.x
-```
+> [!TIP]
+> To get a list of tasks to run you can use `uds run --list`!
+
+## Contributing
+
+Please see the [CONTRIBUTING.md](./CONTRIBUTING.md)
