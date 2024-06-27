@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.3.1-uds.0](https://github.com/defenseunicorns/uds-package-jenkins/compare/v5.3.1-uds.0...v5.3.1-uds.0) (2024-06-27)
+
+
+### Features
+
+* renamed flavor to unicorn ([7c9f782](https://github.com/defenseunicorns/uds-package-jenkins/commit/7c9f78238a0beb48c0c4ffe334069b73086c86b5))
+
+
+### Miscellaneous
+
+* release 5.3.1-uds.0 ([df80dec](https://github.com/defenseunicorns/uds-package-jenkins/commit/df80dec129ac076fbb38a1d2757295fd53f3eb3f))
+
 ## [5.3.1-uds.0](https://github.com/defenseunicorns/uds-package-jenkins/compare/v5.1.26-uds.0...v5.3.1-uds.0) (2024-06-21)
 
 
