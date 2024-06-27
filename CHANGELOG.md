@@ -7,7 +7,7 @@ All notable changes to this project will be documented in this file.
 
 ### Features
 
-* add chainguard flavor and update readme ([65ceb01](https://github.com/defenseunicorns/uds-package-jenkins/commit/65ceb01053bb96fd6116181f1be48a94f57828f5))
+* add unicorn flavor and update readme ([65ceb01](https://github.com/defenseunicorns/uds-package-jenkins/commit/65ceb01053bb96fd6116181f1be48a94f57828f5))
 * update jenkins chart and image ([dc3be27](https://github.com/defenseunicorns/uds-package-jenkins/commit/dc3be275363a97cd6b5dc257569cd82a24313b13))
 * update task files and add todo comment for image ([887010d](https://github.com/defenseunicorns/uds-package-jenkins/commit/887010d901ecb3eb07d32df8816f0a2a195bbbb4))
 
