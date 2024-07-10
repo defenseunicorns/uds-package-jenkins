@@ -36,5 +36,5 @@ components:
     images:
       - registry1.dso.mil/ironbank/opensource/jenkins/jenkins:2.452.2-lts
       - registry1.dso.mil/ironbank/opensource/jenkins/inbound-agent:3186.vc3b_7249b_87eb_-1
-      - registry1.dso.mil/ironbank/kiwigrid/k8s-sidecar:1.27.2
+      - registry1.dso.mil/ironbank/kiwigrid/k8s-sidecar:1.27.4
       - registry1.dso.mil/ironbank/opensource/bats/bats:v1.10.0-ubi9
