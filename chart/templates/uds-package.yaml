@@ -6,7 +6,7 @@ metadata:
 spec:
   {{- if .Values.sso.enabled }}
   sso:
-    - name: Jenkins SSO
+    - name: Jenkins Login
       clientId: uds-package-jenkins
       redirectUris:
         - "https://jenkins.{{ .Values.domain }}/securityRealm/finishLogin"
