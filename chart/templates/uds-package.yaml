@@ -11,6 +11,15 @@ spec:
       redirectUris:
         - "https://jenkins.{{ .Values.domain }}/securityRealm/finishLogin"
   {{- end }}
+
+  monitor:
+    - selector:
+        app.kubernetes.io/name: jenkins
+      targetPort: 8080
+      portName: http
+      path: /prometheus/
+      description: Metrics
+
   network:
     expose:
       - service: jenkins
@@ -22,18 +31,39 @@ spec:
     allow:
       - direction: Ingress
         remoteGenerated: IntraNamespace
+
       - direction: Egress
         remoteGenerated: IntraNamespace
+
       - direction: Egress
         podLabels:
           app.kubernetes.io/name: jenkins
         port: 443
         description: "Jenkins-plugins & SSO"
+
       - direction: Egress
         podLabels:
           jenkins/label: jenkins-jenkins-agent
         port: 443
         description: "Jenkins-jobs phone home"
+
       - direction: Egress
-        # todo: this is over permissive, need to scope it down
+        podLabels:
+          app.kubernetes.io/name: jenkins
         remoteGenerated: KubeAPI
+
+      # Custom rules for unanticipated scenarios
+      {{- range .Values.customNetworkPolicies }}
+      - direction: {{ .direction }}
+        selector:
+          {{ .selector | toYaml | nindent 10 }}
+        {{- if not .remoteGenerated }}
+        remoteNamespace: {{ .remoteNamespace }}
+        remoteSelector:
+          {{ .remoteSelector | toYaml | nindent 10 }}
+        port: {{ .port }}
+        {{- else }}
+        remoteGenerated: {{ .remoteGenerated }}
+        {{- end }}
+        description: {{ .description }}
+      {{- end }}

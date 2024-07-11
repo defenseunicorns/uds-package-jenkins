@@ -15,12 +15,19 @@ tasks:
       - task: setup:k3d-test-cluster
       - task: deploy:test-bundle
 
+  - name: default-full
+    description: Create K3D Cluster with UDS-Core + Jenkins
+    actions:
+      - task: create-test-bundle
+      - task: setup:k3d-full-cluster
+      - task: deploy:test-bundle
+
   - name: create-package
     description: Create UDS Jenkins Package
     actions:
       - task: create:package
         with:
-          options: "--skip-sbom"
+          options: "--skip-sbom --flavor registry1"
 
   - name: create-test-bundle
     description: Create a local UDS Jenkins bundle
