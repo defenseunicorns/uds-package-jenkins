@@ -27,7 +27,7 @@ tasks:
     actions:
       - task: create:package
         with:
-          options: "--skip-sbom --flavor registry1"
+          options: "--skip-sbom"
 
   - name: create-test-bundle
     description: Create a local UDS Jenkins bundle
