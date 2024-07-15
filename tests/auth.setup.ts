@@ -20,5 +20,4 @@ setup('authenticate', async ({ page, context, baseURL }) => {
   await page.context().storageState({ path: authFile });
 
   await page.waitForURL('/');  // successful redirect
-  console.log('Cookies:', cookies);
 })

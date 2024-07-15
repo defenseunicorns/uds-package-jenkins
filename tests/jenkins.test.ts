@@ -9,7 +9,7 @@ test.describe('Jenkins Pipeline', () => {
     defaultBrowserType = browserName;
   });
 
-  test('should create a simple pipeline and check its status', async ({ page }) => {
+  test('Should create a simple pipeline and check its status', async ({ page }) => {
     const pipelineName = `example-pipeline-${defaultBrowserType}-${randomSuffix}`;
     // Navigate to Jenkins dashboard
     await page.goto('/');
