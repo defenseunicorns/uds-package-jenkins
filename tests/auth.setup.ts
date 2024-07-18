@@ -1,9 +1,13 @@
 import { test as setup, expect } from '@playwright/test';
 import { authFile } from './playwright.config';
+import path from 'path';
+
+const screenshotPath = path.resolve(__dirname, 'screenshots', 'screenshot.png');
 
 setup('authenticate', async ({ page, context, baseURL }) => {
-  try {
-    await page.goto(baseURL);
+  console.log('Current working directory:', process.cwd());
+  console.log('Screenshot will be saved to:', screenshotPath);
+    await page.goto('https://jenkins.uds.dev/');
     await page.getByLabel("Username or email").fill("doug");
     await page.getByLabel("Password").fill("unicorn123!@#");
     await page.getByRole("button", { name: "Log In" }).click();
@@ -20,9 +24,11 @@ setup('authenticate', async ({ page, context, baseURL }) => {
 
     await page.context().storageState({ path: authFile });
 
-    await expect(page).toHaveURL(baseURL);
-  } catch (error) {
-    await page.screenshot({ path: 'screenshot.png' });
-    throw error;  // rethrow the error after taking the screenshot
-}
+    try {
+      await expect(page).toHaveURL('https://jenkins.uds.dev/');
+    } catch (error) {
+      console.log('URL assertion failed');
+      await page.screenshot({ path: screenshotPath });
+      throw error;  // Rethrow the error after taking the screenshot
+    }
 })
