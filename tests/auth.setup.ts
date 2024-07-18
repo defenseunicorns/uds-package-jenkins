@@ -1,6 +1,7 @@
 import { test as setup, expect } from '@playwright/test';
 import { authFile } from './playwright.config';
 import path from 'path';
+import fs from 'fs';
 
 // Function to generate a unique screenshot filename
 const getUniqueScreenshotPath = () => {
