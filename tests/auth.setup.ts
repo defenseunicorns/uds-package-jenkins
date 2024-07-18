@@ -2,7 +2,7 @@ import { test as setup, expect } from '@playwright/test';
 import { authFile } from './playwright.config';
 
 setup('authenticate', async ({ page, context, baseURL }) => {
-  await page.goto('/');
+  await page.goto(baseURL);
   await page.getByLabel("Username or email").fill("doug");
   await page.getByLabel("Password").fill("unicorn123!@#");
   await page.getByRole("button", { name: "Log In" }).click();
