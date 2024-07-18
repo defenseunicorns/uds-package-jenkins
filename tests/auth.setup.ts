@@ -19,5 +19,7 @@ setup('authenticate', async ({ page, context, baseURL }) => {
 
   await page.context().storageState({ path: authFile });
 
-  await page.waitForURL('/');  // successful redirect
+  await page.waitForURL(baseURL);  // successful redirect
+
+  await expect(page).toHaveURL(baseURL);
 })
