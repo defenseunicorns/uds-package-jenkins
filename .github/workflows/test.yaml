@@ -88,6 +88,12 @@ jobs:
         run: |
           kubectl get events -A -o wide
 
+      - name: Print Jenkins pod logs
+        if: always()
+        shell: bash -e -o pipefail {0}
+        run: |
+          kubectl logs jenkins-0 -n jenkins
+
       - name: Upload screenshot on failure
         if: failure()
         uses: actions/upload-artifact@v2
