@@ -3,13 +3,13 @@ import { authFile } from './playwright.config';
 import path from 'path';
 import fs from 'fs';
 
-// Function to generate a unique screenshot filename
-const getUniqueScreenshotPath = () => {
+// Function to generate a unique screenshot filename with a custom base name
+const getUniqueScreenshotPath = (baseName: string) => {
   let index = 1;
-  let screenshotPath = path.resolve(__dirname, 'screenshots', `screenshot${index}.png`);
+  let screenshotPath = path.resolve(__dirname, 'screenshots', `${baseName}${index}.png`);
   while (fs.existsSync(screenshotPath)) {
     index++;
-    screenshotPath = path.resolve(__dirname, 'screenshots', `screenshot${index}.png`);
+    screenshotPath = path.resolve(__dirname, 'screenshots', `${baseName}.png`);
   }
   return screenshotPath;
 };
@@ -19,7 +19,7 @@ setup('authenticate', async ({ page, context, baseURL }) => {
     await page.goto('https://jenkins.uds.dev/');
     await page.getByLabel("Username or email").fill("doug");
     await page.getByLabel("Password").fill("unicorn123!@#");
-    const screenshotPath = getUniqueScreenshotPath();
+    const screenshotPath = getUniqueScreenshotPath('beforeLogin');
     console.log('Screenshot will be saved to:', screenshotPath);
     await page.screenshot({ path: screenshotPath });
     await page.getByRole("button", { name: "Log In" }).click();
@@ -41,7 +41,7 @@ setup('authenticate', async ({ page, context, baseURL }) => {
     } catch (error) {
       console.log('URL assertion failed');
       const currentURL = page.url();
-      const screenshotPath = getUniqueScreenshotPath();
+      const screenshotPath = getUniqueScreenshotPath('afterLogin');
       console.log('Screenshot will be saved to:', screenshotPath);
       await page.screenshot({ path: screenshotPath });
       throw error;  // Rethrow the error after taking the screenshot
