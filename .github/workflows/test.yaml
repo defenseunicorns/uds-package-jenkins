@@ -93,4 +93,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: playwright-screenshot
-          path:  tests/screenshots/*
+          path: tests/screenshots/*
