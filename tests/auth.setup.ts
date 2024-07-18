@@ -16,7 +16,6 @@ const getUniqueScreenshotPath = () => {
 
 setup('authenticate', async ({ page, context, baseURL }) => {
   console.log('Current working directory:', process.cwd());
-  console.log('Screenshot will be saved to:', screenshotPath);
     await page.goto('https://jenkins.uds.dev/');
     await page.getByLabel("Username or email").fill("doug");
     await page.getByLabel("Password").fill("unicorn123!@#");
