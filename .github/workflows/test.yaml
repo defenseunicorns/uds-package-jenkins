@@ -87,3 +87,10 @@ jobs:
         shell: bash -e -o pipefail {0}
         run: |
           kubectl get events -A -o wide
+
+      - name: Upload screenshot on failure
+        if: failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: playwright-screenshot
+          path: screenshot.png
