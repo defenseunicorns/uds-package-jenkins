@@ -1,18 +1,26 @@
 import { test, expect, devices } from '@playwright/test';
+import path from 'path';
+
+// Function to generate a unique screenshot filename with a custom base name
+const getUniqueScreenshotPath = (baseName: string) => {
+  let screenshotPath = path.resolve(__dirname, 'screenshots', `${defaultBrowserType}-${baseName}.png`);
+  return screenshotPath;
+};
+
+let defaultBrowserType: string;
+
+test.beforeEach(async ({ browserName }) => {
+  // Use browserName provided by Playwright to determine the browser type
+  defaultBrowserType = browserName;
+});
 
 test.describe('Jenkins Pipeline', () => {
   const randomSuffix = Math.floor(Math.random() * 10000); // Generate a random number
-  let defaultBrowserType: string;
 
-  test.beforeEach(async ({ browserName }) => {
-    // Use browserName provided by Playwright to determine the browser type
-    defaultBrowserType = browserName;
-  });
-
-  test('Should create a simple pipeline and check its status', async ({ page }) => {
+  test('Should create a simple pipeline and check its status', async ({ page, baseURL }) => {
     const pipelineName = `example-pipeline-${defaultBrowserType}-${randomSuffix}`;
     // Navigate to Jenkins dashboard
-    await page.goto('/');
+    await page.goto(baseURL);
 
     // Wait for the dashboard to load and verify login by checking for the logout button
     await page.waitForSelector('a[href="/logout"]');
@@ -30,6 +38,7 @@ test.describe('Jenkins Pipeline', () => {
     console.log('Clicked on New Item link');
 
     // Enter pipeline name
+    await page.waitForTimeout(2000);
     await page.fill('input[name="name"]', pipelineName);
     console.log(`Entered pipeline name: ${pipelineName}`);
 
@@ -39,6 +48,8 @@ test.describe('Jenkins Pipeline', () => {
     // Verify if 'Pipeline' type is checked (aria-checked="true")
     await page.waitForSelector('li.org_jenkinsci_plugins_workflow_job_WorkflowJob.active[aria-checked="true"]', { timeout: 5000 });
     console.log('Pipeline job type is checked');
+    var screenshotPath = getUniqueScreenshotPath('job-page');
+    await page.screenshot({ path: screenshotPath });
 
     // Click OK to create the pipeline
     await page.click('button[type="submit"]');
@@ -71,8 +82,12 @@ test.describe('Jenkins Pipeline', () => {
         }
       }
     `;
+    await page.waitForTimeout(2000);
     await page.fill('.ace_text-input', pipelineScript);
     console.log('Entered pipeline script');
+    await page.waitForTimeout(2000);
+    screenshotPath = getUniqueScreenshotPath('pipeline-page');
+    await page.screenshot({ path: screenshotPath });
 
     // Save the pipeline
     await page.click('button[name="Submit"]');
@@ -93,5 +108,7 @@ test.describe('Jenkins Pipeline', () => {
     // Assert that the build was successful
     await page.waitForSelector('svg[tooltip="Success"][title="Success"]', { timeout: 60000 });
     console.log('Build was successful');
+    screenshotPath = getUniqueScreenshotPath('results-page');
+    await page.screenshot({ path: screenshotPath });
   });
 });

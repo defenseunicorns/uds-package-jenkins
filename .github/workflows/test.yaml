@@ -94,18 +94,6 @@ jobs:
         run: |
           kubectl logs jenkins-0 -n jenkins
 
-      - name: Print Jenkins OIC configmap
-        if: always()
-        shell: bash -e -o pipefail {0}
-        run: |
-          kubectl get configmap jenkins-jenkins-config-keycloak -n jenkins -o yaml
-
-      - name: Print Jenkins OIC secret
-        if: always()
-        shell: bash -e -o pipefail {0}
-        run: |
-          kubectl get secrets sso-client-uds-package-jenkins -n jenkins -o=jsonpath='{.data.secret}' | base64 -d
-
       - name: Upload screenshot on failure
         if: failure()
         uses: actions/upload-artifact@v2
