@@ -18,7 +18,7 @@ tasks:
             code: 200
 
   - name: ui
-    description: Mattermost UI Checks
+    description: Jenkins UI Checks
     actions:
       - cmd: npm ci
         dir: tests
