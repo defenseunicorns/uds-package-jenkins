@@ -11,8 +11,6 @@ metadata:
 variables:
   - name: DOMAIN
     default: "uds.dev"
-  - name: JENKINS_CLIENT_SECRET
-    default: ""
 
 components:
   - name: jenkins-config

@@ -4,6 +4,10 @@ metadata:
   name: jenkins-common
   description: "UDS jenkins Common Package"
 
+variables:
+  - name: JENKINS_CLIENT_SECRET
+    default: ""
+
 components:
   - name: jenkins-config
     required: true
