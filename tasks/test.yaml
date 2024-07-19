@@ -16,3 +16,13 @@ tasks:
             protocol: https
             address: jenkins.uds.dev/login
             code: 200
+
+  - name: ui
+    description: Jenkins UI Checks
+    actions:
+      - cmd: npm ci
+        dir: tests
+      - cmd: npx playwright install --with-deps
+        dir: tests
+      - cmd: npx playwright test
+        dir: tests

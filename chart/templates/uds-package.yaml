@@ -23,7 +23,7 @@ spec:
   network:
     expose:
       - service: jenkins
-        podLabels:
+        selector:
           app.kubernetes.io/name: jenkins
         gateway: tenant
         host: jenkins
@@ -36,19 +36,29 @@ spec:
         remoteGenerated: IntraNamespace
 
       - direction: Egress
-        podLabels:
+        remoteGenerated: Anywhere
+        selector:
           app.kubernetes.io/name: jenkins
         port: 443
         description: "Jenkins-plugins & SSO"
 
       - direction: Egress
-        podLabels:
+        remoteNamespace: keycloak
+        remoteSelector:
+          app.kubernetes.io/name: keycloak
+        selector:
+          app.kubernetes.io/name: jenkins
+        port: 8080
+        description: "SSO Internal"
+
+      - direction: Egress
+        selector:
           jenkins/label: jenkins-jenkins-agent
         port: 443
         description: "Jenkins-jobs phone home"
 
       - direction: Egress
-        podLabels:
+        selector:
           app.kubernetes.io/name: jenkins
         remoteGenerated: KubeAPI
 

@@ -1,4 +1,4 @@
-# 🚚 UDS Jenkins Zarf Package
+# 🏪 UDS Jenkins Zarf Package
 
 [![Latest Release](https://img.shields.io/github/v/release/defenseunicorns/uds-package-jenkins)](https://github.com/defenseunicorns/uds-package-jenkins/releases)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/defenseunicorns/uds-package-jenkins/tag-and-release.yaml)](https://github.com/defenseunicorns/uds-package-jenkins/actions/workflows/tag-and-release.yaml)
