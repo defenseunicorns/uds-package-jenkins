@@ -17,19 +17,6 @@ components:
         namespace: jenkins
         version: 0.1.0
         localPath: ../chart
-    actions:
-      onDeploy:
-        after:
-          - wait:
-              cluster:
-                kind: secret
-                name: sso-client-uds-package-jenkins
-                namespace: jenkins
-          - cmd: zarf tools kubectl get secrets sso-client-uds-package-jenkins -n jenkins -o=jsonpath='{.data.secret}' | base64 -d
-            mute: true
-            setVariables:
-              - name: JENKINS_CLIENT_SECRET
-                sensitive: true
   - name: jenkins
     required: true
     charts:
@@ -41,3 +28,16 @@ components:
         releaseName: jenkins
         valuesFiles:
           - ../values/common.yaml
+    actions:
+      onDeploy:
+        before:
+          - wait:
+              cluster:
+                kind: secret
+                name: sso-client-uds-package-jenkins
+                namespace: jenkins
+          - cmd: zarf tools kubectl get secrets sso-client-uds-package-jenkins -n jenkins -o=jsonpath='{.data.secret}' | base64 -d
+            mute: true
+            setVariables:
+              - name: JENKINS_CLIENT_SECRET
+                sensitive: true
