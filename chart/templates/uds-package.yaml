@@ -7,10 +7,21 @@ spec:
   {{- if .Values.sso.enabled }}
   sso:
     - name: Jenkins Login
-      clientId: uds-package-jenkins
+      clientId: uds-package-jenkins-saml
       redirectUris:
         - "https://jenkins.{{ .Values.domain }}/securityRealm/finishLogin"
   {{- end }}
+
+      protocol: saml
+      defaultClientScopes:
+        - "mapper-saml-email-email"
+        - "mapper-saml-firstname-first_name"
+        - "mapper-saml-lastname-last_name"
+        - "mapper-saml-grouplist-groups"
+        - "mapper-saml-username-name"
+
+      attributes:
+        saml.client.signature: "false"
 
   monitor:
     - selector:
