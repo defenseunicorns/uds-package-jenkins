@@ -46,21 +46,21 @@ jobs:
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
 
       - name: Environment setup
-        uses: defenseunicorns/uds-common/.github/actions/setup@772b3337950b7c8e0882c527263684306bba7ce4 # v0.7.1
+        uses: defenseunicorns/uds-common/.github/actions/setup@a7549ad75a9bbd8e71ce2236ec17c1e33ec4df61 # v0.8.1
         with:
           registry1Username: ${{ secrets.IRON_BANK_ROBOT_USERNAME }}
           registry1Password: ${{ secrets.IRON_BANK_ROBOT_PASSWORD }}
           ghToken: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Test
-        uses: defenseunicorns/uds-common/.github/actions/test@772b3337950b7c8e0882c527263684306bba7ce4 # v0.7.1
+        uses: defenseunicorns/uds-common/.github/actions/test@a7549ad75a9bbd8e71ce2236ec17c1e33ec4df61 # v0.8.1
         with:
           flavor: ${{ matrix.flavor }}
           type: ${{ matrix.type }}
 
       - name: Save logs
         if: always()
-        uses: defenseunicorns/uds-common/.github/actions/save-logs@772b3337950b7c8e0882c527263684306bba7ce4 # v0.7.1
+        uses: defenseunicorns/uds-common/.github/actions/save-logs@a7549ad75a9bbd8e71ce2236ec17c1e33ec4df61 # v0.8.1
         with:
           suffix: ${{ matrix.type }}-${{ matrix.flavor }}-${{ github.run_id }}-${{ github.run_attempt }}
 
@@ -96,7 +96,7 @@ jobs:
 
       - name: Upload screenshot on failure
         if: failure()
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@0b2256b8c012f0828dc542b3febcab082c67f72b # v4
         with:
           name: playwright-screenshot
           path: tests/screenshots/*
