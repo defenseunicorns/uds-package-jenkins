@@ -5,8 +5,9 @@ metadata:
   description: "UDS jenkins Common Package"
 
 variables:
-  - name: JENKINS_CLIENT_SECRET
-    default: ""
+  - name: JENKINS_SSO
+    default: "{}"
+    autoIndent: true
 
 components:
   - name: jenkins-config
@@ -26,10 +27,10 @@ components:
                 name: jenkins
                 namespace: jenkins
                 condition: "'{.status.phase}'=Ready"
-          - cmd: ./zarf tools kubectl get secrets sso-client-uds-package-jenkins -n jenkins -o=jsonpath='{.data.secret}' | base64 -d
-            mute: true
+          - cmd: ./zarf tools kubectl get secret jenkins-sso -n jenkins -o=jsonpath='{.data.sso}' | base64 --decode
+            mute: false
             setVariables:
-              - name: JENKINS_CLIENT_SECRET
+              - name: JENKINS_SSO
                 sensitive: true
   - name: jenkins
     required: true

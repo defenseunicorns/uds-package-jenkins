@@ -2,6 +2,9 @@ domain: "###ZARF_VAR_DOMAIN###"
 
 sso:
   enabled: true
+  secretName: jenkins-sso
+  # # protocol should be either saml or oidc
+  protocol: saml
 
 # customNetworkPolicies:
 #    # Notice no `remoteGenerated` field here on custom internal rule
