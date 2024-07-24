@@ -13,7 +13,7 @@ variables:
     default: "uds.dev"
 
 components:
-  - name: jenkins-config
+  - name: uds-jenkins-config
     required: true
     description: "SSO secret for jenkins"
     import:
