@@ -13,8 +13,8 @@ packages:
     ref: 5.3.1-uds.0
     # x-release-please-end
     overrides:
-      jenkins-config:
-        jenkins-config:
+      uds-jenkins-config:
+        uds-jenkins-config:
           variables:
             - name: JENKINS_SSO_ENABLED
               description: "Boolean to enable or disable sso things"

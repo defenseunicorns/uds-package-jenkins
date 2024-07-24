@@ -1,6 +1,6 @@
 apiVersion: v2
 name: chart
-description: jenkins-config
+description: uds-jenkins-config
 
 # A chart can be either an 'application' or a 'library' chart.
 #
