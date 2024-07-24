@@ -42,7 +42,6 @@ controller:
     readinessProbe:
       initialDelaySeconds: 60
 
-
 agent:
   enabled: true
   jenkinsUrl: https://jenkins.###ZARF_VAR_DOMAIN###

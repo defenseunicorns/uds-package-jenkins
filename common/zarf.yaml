@@ -23,12 +23,12 @@ components:
         after:
           - wait:
               cluster:
-                kind: package
+                kind: Packages
                 name: jenkins
                 namespace: jenkins
                 condition: "'{.status.phase}'=Ready"
           - cmd: ./zarf tools kubectl get secret jenkins-sso -n jenkins -o=jsonpath='{.data.sso}' | base64 --decode
-            mute: false
+            mute: true
             setVariables:
               - name: JENKINS_SSO
                 sensitive: true
