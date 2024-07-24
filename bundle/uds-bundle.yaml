@@ -13,7 +13,7 @@ packages:
     ref: 5.3.1-uds.0
     # x-release-please-end
     overrides:
-      jenkins:
+      uds-jenkins-config:
         uds-jenkins-config:
           variables:
             - name: JENKINS_SSO_ENABLED
