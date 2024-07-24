@@ -10,7 +10,7 @@ variables:
     autoIndent: true
 
 components:
-  - name: jenkins-config
+  - name: uds-jenkins-config
     required: true
     description: "SSO secret for jenkins"
     charts:
