@@ -37,14 +37,16 @@ spec:
                         idpMetadataConfiguration:
                           period: 1440
                           url: "https://sso.{{ .Values.domain }}/realms/uds/protocol/saml/descriptor"
-    {{- else if eq .Values.sso.protocol "oidc"  }}
-      clientId: uds-package-jenkins-oidc
+    {{- else if eq .Values.sso.protocol "openid-connect"  }}
+      clientId: uds-package-jenkins-openid-connect
+
+      protocol: openid-connect
 
       secretName: {{ .Values.sso.secretName }}
       secretTemplate:
         sso: |-
           oic:
-                        clientId: "uds-package-jenkins-oidc"
+                        clientId: "uds-package-jenkins-openid-connect"
                         clientSecret: "clientField(secret)"
                         wellKnownOpenIDConfigurationUrl: "https://sso.{{ .Values.domain }}/realms/uds"
                         tokenServerUrl: "https://sso.{{ .Values.domain }}/realms/uds/protocol/openid-connect/token"
