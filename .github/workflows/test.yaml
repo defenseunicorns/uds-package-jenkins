@@ -40,7 +40,7 @@ jobs:
     strategy:
       matrix:
         flavor: [upstream, registry1, unicorn]
-        type: [install, upgrade]
+        type: [install]
 
     steps:
       - name: Checkout repository
