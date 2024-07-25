@@ -24,7 +24,7 @@ export default defineConfig({
   use: {
     video: 'on',
     baseURL: process.env.BASE_URL || 'https://jenkins.uds.dev', // for `await page.goto('/')` etc
-    trace: 'on', // collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer
+    trace: 'on', // collect trace running the test. See https://playwright.dev/docs/trace-viewer
   },
 
   projects: [
