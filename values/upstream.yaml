@@ -1,0 +1,18 @@
+controller:
+  image:
+    registry: "docker.io"
+    repository: "jenkins/jenkins"
+    tag: "2.469-jdk17"
+  sidecars:
+    configAutoReload:
+      image:
+        registry: "docker.io"
+        repository: "kiwigrid/k8s-sidecar"
+        tag: "1.27.5"
+
+agent:
+  image:
+    # -- Repository to pull the agent jnlp image from
+    repository: "docker.io/jenkins/inbound-agent"
+    # -- Tag of the image to pull
+    tag: "3256.v88a_f6e922152-1"

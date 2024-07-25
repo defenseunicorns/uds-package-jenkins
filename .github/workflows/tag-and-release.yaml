@@ -26,7 +26,7 @@ jobs:
     name: Publish package
     strategy:
       matrix:
-        flavor: [registry1]
+        flavor: [upstream, registry1, unicorn]
 
     permissions:
       contents: read
@@ -41,9 +41,24 @@ jobs:
           registry1Username: ${{ secrets.IRON_BANK_ROBOT_USERNAME }}
           registry1Password: ${{ secrets.IRON_BANK_ROBOT_PASSWORD }}
           ghToken: ${{ secrets.GITHUB_TOKEN }}
+          chainguardIdentity: ${{ secrets.CHAINGUARD_IDENTITY }}
+
+      # Determine repository to publish to
+      - name: Determine destination repository
+        id: repo
+        run: |
+          repo=ghcr.io/defenseunicorns/packages
+          # Publish unicorn flavor to private repository
+          if [ "${{ matrix.flavor }}" = "unicorn" ]; then
+            repo+=/private
+          fi
+          repo+=/uds
+
+          echo "repo=${repo}" >> "$GITHUB_OUTPUT"
+          echo "Publishing packages and bundles to ${repo}"
 
       - name: Publish Package
-        run: uds run -f tasks/publish.yaml package --set FLAVOR=${{ matrix.flavor }}
+        run: uds run -f tasks/publish.yaml package --set FLAVOR=${{ matrix.flavor }} --set TARGET_REPO=${{ steps.repo.outputs.repo }} --no-progress
 
       - name: Save logs
         if: always()
