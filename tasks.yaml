@@ -48,7 +48,7 @@ tasks:
     actions:
       - task: deploy:test-bundle
 
-  - name: local-all
+  - name: dev
     description: Create then deploy local jenkins bundle
     actions:
       - task: create-test-bundle

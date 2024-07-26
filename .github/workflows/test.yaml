@@ -35,12 +35,13 @@ permissions:
 jobs:
   run-test:
     name: ${{ matrix.type }} ${{ matrix.flavor }}
-    runs-on: uds-marketplace-ubuntu-big-boy-8-core
+    runs-on: ubuntu-latest
     timeout-minutes: 25
     strategy:
+      fail-fast: false
       matrix:
         flavor: [upstream, registry1, unicorn]
-        type: [install]
+        type: [install, upgrade]
 
     steps:
       - name: Checkout repository
