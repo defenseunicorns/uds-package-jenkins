@@ -3,7 +3,7 @@ domain: "###ZARF_VAR_DOMAIN###"
 sso:
   enabled: true
   secretName: jenkins-sso
-  # protocol should be either 'saml' or 'openid-connect'
+  # protocol should be either 'saml' or 'openid_connect'
   protocol: saml
 
 # customNetworkPolicies:

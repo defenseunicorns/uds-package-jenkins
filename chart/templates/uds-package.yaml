@@ -37,7 +37,7 @@ spec:
                         idpMetadataConfiguration:
                           period: 1440
                           url: "https://sso.{{ .Values.domain }}/realms/uds/protocol/saml/descriptor"
-    {{- else if eq .Values.sso.protocol "openid-connect"  }}
+    {{- else if eq .Values.sso.protocol "openid_connect"  }}
       clientId: uds-package-jenkins-openid-connect
 
       protocol: openid-connect
