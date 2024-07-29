@@ -8,6 +8,11 @@ variables:
   - name: JENKINS_SSO
     default: "{}"
     autoIndent: true
+  - name: JENKINS_PVC_SIZE
+    default: 50Gi
+  - name: JENKINS_PLUGINS
+    default: "[]"
+    autoIndent: true
 
 components:
   - name: uds-jenkins-config
@@ -18,6 +23,13 @@ components:
         namespace: jenkins
         version: 0.1.0
         localPath: ../chart
+        variables:
+          - name: JENKINS_SSO_ENABLED
+            description: "Boolean to enable or disable sso things"
+            path: "sso.enabled"
+          - name: JENKINS_SSO_PROTOCOL
+            description: "Protocol to use. Valid values are 'openid-connect' and 'saml'. Default value is 'saml'"
+            path: "sso.protocol"
     actions:
       onDeploy:
         after:
@@ -43,3 +55,7 @@ components:
         releaseName: jenkins
         valuesFiles:
           - ../values/common.yaml
+        variables:
+          - name: JENKINS_PLUGINS
+            description: "List of plugins to install on Jenkins startup"
+            path: controller.installPlugins
