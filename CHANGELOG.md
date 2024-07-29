@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.4.3-uds.0](https://github.com/defenseunicorns/uds-package-jenkins/compare/v5.3.1-uds.0...v5.4.3-uds.0) (2024-07-29)
+
+
+### Features
+
+* Add prometheus integration to jenkins ([04b3db1](https://github.com/defenseunicorns/uds-package-jenkins/commit/04b3db1a90be3e84f85fe38fb874d57b06468fce))
+* add upstream and unicorn flavors ([21374a6](https://github.com/defenseunicorns/uds-package-jenkins/commit/21374a6a2b0e21e55b755b7d402b9aa405682c93))
+* added a single change config to swap to and from saml and oidc ([703aea5](https://github.com/defenseunicorns/uds-package-jenkins/commit/703aea5ef0951be01f8b652ea57996ec52403ff8))
+* added variables for the bundle ([6220649](https://github.com/defenseunicorns/uds-package-jenkins/commit/622064987b532736e9455cf7e71896306a536939))
+* adds playwright test to create a basic pipeline and check if it succeeds ([899ec5f](https://github.com/defenseunicorns/uds-package-jenkins/commit/899ec5f8642aa2862ae1b42ef7e4ea36436b16aa))
+* adds saml configuration for jenkins to use ([8a35815](https://github.com/defenseunicorns/uds-package-jenkins/commit/8a35815e9ec9f770416fa44839e2de4c90a2f3f5))
+* re-adds the upgrade logic and tweaks it so it doesn't fail the install tests ([f558c19](https://github.com/defenseunicorns/uds-package-jenkins/commit/f558c19506f9a68815c506b670d69fbf963df33b))
+* update codeowners and updated name for sso client id ([89e51c5](https://github.com/defenseunicorns/uds-package-jenkins/commit/89e51c5fc9f10c5097ac6dbddd5465b313ce83fa))
+
+
+### Bug Fixes
+
+* change expected value for sso protocol ([b643991](https://github.com/defenseunicorns/uds-package-jenkins/commit/b6439913f409e246f2bba7b7710fc7ff59ed3838))
+* fixed task ([4a2ed1a](https://github.com/defenseunicorns/uds-package-jenkins/commit/4a2ed1a58c574d04cf6cb45ae4d2413d7f9bbf64))
+* removed unicorn flavor ([3c8d2cd](https://github.com/defenseunicorns/uds-package-jenkins/commit/3c8d2cd1860b5bc7535865e8bd731a7e9ef31932))
+
+
+### Miscellaneous
+
+* **deps:** update jenkins package dependencies ([b372ca7](https://github.com/defenseunicorns/uds-package-jenkins/commit/b372ca7969668557a4c780df059dbc4554228d2b))
+* **deps:** update jenkins package dependencies ([ed2a333](https://github.com/defenseunicorns/uds-package-jenkins/commit/ed2a333d206c12da5069ca4657a8137a60348b97))
+* **deps:** update jenkins support dependencies ([219b15d](https://github.com/defenseunicorns/uds-package-jenkins/commit/219b15de04f71920f2909083300201a9220a2e2b))
+* **deps:** update jenkins support dependencies ([cbc26df](https://github.com/defenseunicorns/uds-package-jenkins/commit/cbc26df7def2637141fac2752ca78939b95b0a9c))
+* release 5.4.3-uds.0 ([3fb8c2e](https://github.com/defenseunicorns/uds-package-jenkins/commit/3fb8c2e372cad43fbabdcc08552d40a794b9ce76))
+
 ## [5.3.1-uds.0](https://github.com/defenseunicorns/uds-package-jenkins/compare/v5.3.1-uds.0...v5.3.1-uds.0) (2024-06-27)
 
 
