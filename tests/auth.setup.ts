@@ -12,7 +12,7 @@ setup('authenticate', async ({ page, context, baseURL }) => {
   console.log('Current working directory:', process.cwd());
     await page.goto(baseURL);
     await page.getByLabel("Username or email").fill("doug");
-    await page.getByLabel("Password").fill("unicorn123!@#");
+    await page.getByLabel("Password").fill("unicorn123!@#UN");
     const screenshotPath = getUniqueScreenshotPath('beforeLogin');
     console.log('Screenshot will be saved to:', screenshotPath);
     await page.screenshot({ path: screenshotPath });
