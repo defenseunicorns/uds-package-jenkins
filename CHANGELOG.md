@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.5.0-uds.0](https://github.com/defenseunicorns/uds-package-jenkins/compare/v5.4.3-uds.0...v5.5.0-uds.0) (2024-08-06)
+
+
+### Features
+
+* add the made for uds badge ([ff0db1d](https://github.com/defenseunicorns/uds-package-jenkins/commit/ff0db1d89e1bdd8e8937570e4cc7d51333cc1bef))
+
+
+### Bug Fixes
+
+* changes playwright doug user pass ([fa800d2](https://github.com/defenseunicorns/uds-package-jenkins/commit/fa800d2e91226c1f563500e11b1618efcb6b3626))
+
+
+### Miscellaneous
+
+* **deps:** update jenkins support dependencies ([db88137](https://github.com/defenseunicorns/uds-package-jenkins/commit/db881376401e653f255b6c2c197d4e18e985abe9))
+
 ## [5.4.3-uds.0](https://github.com/defenseunicorns/uds-package-jenkins/compare/v5.4.3-uds.0...v5.4.3-uds.0) (2024-07-29)
 
 
