@@ -20,9 +20,6 @@ spec:
         - "mapper-saml-grouplist-groups"
         - "mapper-saml-username-name"
 
-      attributes:
-        saml.client.signature: "false"
-
       secretName: {{ .Values.sso.secretName }}
       secretTemplate:
         sso: |-
