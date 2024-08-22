@@ -66,6 +66,7 @@ jobs:
           registry1Username: ${{ secrets.IRON_BANK_ROBOT_USERNAME }}
           registry1Password: ${{ secrets.IRON_BANK_ROBOT_PASSWORD }}
           ghToken: ${{ secrets.GITHUB_TOKEN }}
+          chainguardIdentity: ${{ secrets.CHAINGUARD_IDENTITY }}
 
       - name: Playwright setup
         uses: defenseunicorns/uds-common/.github/actions/playwright@24c8a2a48eeb33773b76b3587c489cb17496c9e0 # v0.12.0
@@ -106,3 +107,23 @@ jobs:
         shell: bash -e -o pipefail {0}
         run: |
           kubectl get events -A -o wide
+
+      - name: Print Jenkins pod logs
+        if: always()
+        shell: bash -e -o pipefail {0}
+        run: |
+          kubectl logs jenkins-0 -n jenkins
+
+      - name: Upload screenshot on failure
+        if: failure()
+        uses: actions/upload-artifact@834a144ee995460fba8ed112a2fc961b36a5ec5a # v4
+        with:
+          name: playwright-screenshot
+          path: tests/screenshots/*
+
+      - name: Upload video on failure
+        if: failure()
+        uses: actions/upload-artifact@834a144ee995460fba8ed112a2fc961b36a5ec5a # v4
+        with:
+          name: playwright-video
+          path: tests/.playwright/output/*
