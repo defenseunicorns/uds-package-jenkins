@@ -83,6 +83,9 @@ spec:
         remoteGenerated: IntraNamespace
 
       - direction: Egress
+        remoteGenerated: IntraNamespace
+
+      - direction: Egress
         remoteGenerated: Anywhere
         selector:
           app.kubernetes.io/name: jenkins
