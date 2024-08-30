@@ -63,7 +63,7 @@ jobs:
       fail-fast: true
       matrix:
         type: [install, upgrade]
-        flavor: [upstream, registry1]
+        flavor: [upstream, registry1, unicorn]
 
 
     # name: ${{ matrix.type }} ${{ matrix.flavor }}
