@@ -21,5 +21,16 @@
       "commitMessageTopic": "package-deps",
       "matchDatasources": ["docker", "helm", "git-tags"]
     }
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["values\\/.*\\.ya?ml$"],
+      "matchStrings": [
+        "-\\s(?<depName>[aA0-zZ9\\-]*):(?<currentValue>.*)"
+      ],
+      "versioningTemplate": "maven",
+      "depNameTemplate": "jenkinsci/{{{depName}}}-plugin",
+      "datasourceTemplate": "github-tags"
+    }
   ]
 }
