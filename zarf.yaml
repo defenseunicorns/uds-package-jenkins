@@ -34,8 +34,8 @@ components:
         valuesFiles:
           - values/upstream.yaml
     images:
-      - docker.io/jenkins/jenkins:2.473-jdk17
-      - docker.io/kiwigrid/k8s-sidecar:1.27.5
+      - docker.io/jenkins/jenkins:2.475-jdk17
+      - docker.io/kiwigrid/k8s-sidecar:1.27.6
       - docker.io/jenkins/inbound-agent:3256.v88a_f6e922152-1
 
   - name: jenkins
@@ -52,9 +52,9 @@ components:
         valuesFiles:
           - values/registry1.yaml
     images:
-      - registry1.dso.mil/ironbank/opensource/jenkins/jenkins:2.473-jdk17
+      - registry1.dso.mil/ironbank/opensource/jenkins/jenkins:2.474-jdk17
       - registry1.dso.mil/ironbank/opensource/jenkins/inbound-agent:3186.vc3b_7249b_87eb_-1
-      - registry1.dso.mil/ironbank/kiwigrid/k8s-sidecar:1.27.5
+      - registry1.dso.mil/ironbank/kiwigrid/k8s-sidecar:1.27.6
 
   # Note: unicorn flavor is experimental
   - name: jenkins
@@ -71,6 +71,6 @@ components:
         valuesFiles:
           - values/unicorn.yaml
     images:
-      - cgr.dev/du-uds-defenseunicorns/jenkins:2.473
+      - cgr.dev/du-uds-defenseunicorns/jenkins:2.474
       - registry1.dso.mil/ironbank/opensource/jenkins/inbound-agent:3186.vc3b_7249b_87eb_-1
       - cgr.dev/du-uds-defenseunicorns/k8s-sidecar:1.27.5
