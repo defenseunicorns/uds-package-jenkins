@@ -24,6 +24,7 @@ controller:
     - prometheus:773.v3b_62d8178eec
     - cloudbees-disk-usage-simple:203.v3f46a_7462b_1a_
     - saml:4.464.vea_cb_75d7f5e0
+    - okhttp-api:4.11.0-179.vdc1e64343d52
   overwritePlugins: true
   JCasC:
     defaultConfig: true
