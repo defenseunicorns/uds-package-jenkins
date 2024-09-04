@@ -14,6 +14,9 @@ tasks:
     actions:
       - task: create-jenkins-test-bundle
       - task: setup:k3d-test-cluster
+        # TODO: Remove pinned version after uds-common releases 0.12.1 or later
+        with:
+          version: 0.26.1
       - task: deploy:test-bundle
 
   - name: default-full
@@ -21,6 +24,9 @@ tasks:
     actions:
       - task: create-jenkins-test-bundle
       - task: setup:k3d-full-cluster
+        # TODO: Remove pinned version after uds-common releases 0.12.1 or later
+        with:
+          version: 0.26.1
       - task: deploy:test-bundle
 
   - name: create-jenkins-package
@@ -48,6 +54,9 @@ tasks:
     description: Setup a K3D cluster with UDS-Core-Slim
     actions:
       - task: setup:k3d-test-cluster
+        # TODO: Remove pinned version after uds-common releases 0.12.1 or later
+        with:
+          version: 0.26.1
 
   - name: dev
     description: Create then deploy local jenkins bundle
@@ -62,6 +71,9 @@ tasks:
     actions:
       - task: create-jenkins-test-bundle
       - task: setup:k3d-test-cluster
+        # TODO: Remove pinned version after uds-common releases 0.12.1 or later
+        with:
+          version: 0.26.1
       - task: deploy:test-bundle
       - task: setup:create-doug-user
       - task: test:health-check
@@ -73,6 +85,9 @@ tasks:
     actions:
       - task: upgrade:create-latest-tag-bundle
       - task: setup:k3d-test-cluster
+        # TODO: Remove pinned version after uds-common releases 0.12.1 or later
+        with:
+          version: 0.26.1
       - task: deploy:test-bundle
       - task: create-jenkins-test-bundle
       - task: deploy:test-bundle
