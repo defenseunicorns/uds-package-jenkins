@@ -21,6 +21,8 @@ The Jenkins Package expects to be deployed on top of [UDS Core](https://github.c
 
 > [!IMPORTANT]
 > **NOTE #1:** To create the registry1 flavor you will need to be logged into Iron Bank - you can find instructions on how to do this in the [Big Bang Zarf Tutorial](https://docs.zarf.dev/tutorials/6-big-bang/#setup).
+
+> [!IMPORTANT]
 > **NOTE #2:** To create the unicorn flavor you will need to be logged into Chainguard.
 
 ## Releases
