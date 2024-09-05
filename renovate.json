@@ -23,10 +23,10 @@
       "matchDatasources": ["docker", "helm", "git-tags"]
     },
     {
-      "matchFileNames": ["^values/common\\.ya?ml$"],
       "groupName": "jenkins Plugin Dependencies",
       "labels": ["plugin-deps"],
       "commitMessageTopic": "plugin-deps",
+      "packagePatterns": ["jenkinsci/.*-plugin"],
       "versioning": "loose"
     }
   ],
