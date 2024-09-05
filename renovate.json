@@ -13,7 +13,8 @@
       "groupName": "jenkins Support Dependencies",
       "labels": ["support-deps"],
       "commitMessageTopic": "support-deps",
-      "packagePatterns": ["*"]
+      "packagePatterns": ["*"],
+      "excludePackagePatterns": ["jenkinsci/.*-plugin"]
     },
     {
       "groupName": "jenkins Package Dependencies",
