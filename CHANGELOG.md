@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.5.14-uds-1](https://github.com/defenseunicorns/uds-package-jenkins/compare/v5.5.14-uds-0...v5.5.14-uds-1) (2024-09-05)
+
+
+### Features
+
+* re-add plugin renovate json ([cefd16d](https://github.com/defenseunicorns/uds-package-jenkins/commit/cefd16d554cf0a3c86a42a1b008a9beadd2b5867))
+
+
+### Miscellaneous
+
+* add delivery as codeowners ([0143889](https://github.com/defenseunicorns/uds-package-jenkins/commit/01438893802b85fea8b2f0bf73f22ecc8be465c4))
+* **deps:** update jenkins package dependencies to v2.475 ([cfac53a](https://github.com/defenseunicorns/uds-package-jenkins/commit/cfac53a95650c39ce9060e7ddb1706a29618e56f))
+* **deps:** update jenkins plugin dependencies ([442cc5c](https://github.com/defenseunicorns/uds-package-jenkins/commit/442cc5c482998fac679d162d93c4b3c3d3440bb2))
+* **deps:** update support-deps to v38.68.0 ([78419ae](https://github.com/defenseunicorns/uds-package-jenkins/commit/78419ae727d685d57d4e47f892bbb0a6a6c29b0f))
+* release 5.5.14-uds.1 ([f29922a](https://github.com/defenseunicorns/uds-package-jenkins/commit/f29922ae4c007be0b3f48820b47891110df46e22))
+
 ## [5.5.14-uds-0](https://github.com/defenseunicorns/uds-package-jenkins/compare/v5.5.0-uds.0...v5.5.14-uds-0) (2024-09-04)
 
 
