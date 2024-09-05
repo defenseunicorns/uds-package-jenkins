@@ -25,7 +25,9 @@
       "groupName": "jenkins Plugin Dependencies",
       "labels": ["plugin-deps"],
       "commitMessageTopic": "plugin-deps",
-      "matchDatasources": ["github-tags"]
+      "matchDatasources": ["github-tags"],
+      "matchDepTypes": ["module"],
+      "versioning": "loose"
     }
   ],
   "regexManagers": [
