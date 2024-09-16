@@ -2,7 +2,7 @@ controller:
   image:
     registry: "registry1.dso.mil"
     repository: "ironbank/opensource/jenkins/jenkins"
-    tag: "2.475-jdk17"
+    tag: "2.476-jdk17"
   sidecars:
     configAutoReload:
       image:
