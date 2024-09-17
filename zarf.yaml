@@ -4,7 +4,7 @@ metadata:
   name: jenkins
   description: "UDS Jenkins package"
   # x-release-please-start-version
-  version: "5.5.14-uds.1-1"
+  version: "5.6.1-uds.0-1"
   # x-release-please-end
   architecture: amd64
 
