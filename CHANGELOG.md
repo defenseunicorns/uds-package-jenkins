@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.6.1-uds.0](https://github.com/defenseunicorns/uds-package-jenkins/compare/v5.5.14-uds.1...v5.6.1-uds.0) (2024-09-17)
+
+
+### Miscellaneous
+
+* **deps:** update jenkins package dependencies ([7dabeca](https://github.com/defenseunicorns/uds-package-jenkins/commit/7dabeca8f69f51cbc32ef547f56712975f6908b3))
+* **deps:** update jenkins plugin dependencies ([b0335a5](https://github.com/defenseunicorns/uds-package-jenkins/commit/b0335a5577bc0d6577d458ae6cb143604799a12b))
+* **deps:** update jenkins support dependencies ([f8d7045](https://github.com/defenseunicorns/uds-package-jenkins/commit/f8d7045e8db19eccadfced5d752e3491bafe94d5))
+* release 5.6.1-uds.0 ([2f65730](https://github.com/defenseunicorns/uds-package-jenkins/commit/2f65730788cb4ca34fa29afaea84556d8f1233c4))
+
 ## [5.5.14-uds.1](https://github.com/defenseunicorns/uds-package-jenkins/compare/v5.5.14-uds-1...v5.5.14-uds.1) (2024-09-09)
 
 
