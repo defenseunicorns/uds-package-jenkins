@@ -1,15 +1,10 @@
 name: Metadata
 
 on:
-  # This workflow is triggered on pull requests to the main branch.
   pull_request:
     branches: [main]
     types: [milestoned, opened, edited, synchronize]
 
-  # This allows other repositories to call this workflow in a reusable way
-  workflow_call:
-
 jobs:
   validate:
-    name: Validate
-    uses: defenseunicorns/uds-common/.github/workflows/commitlint.yaml@86886015d1edc43036b3dd000fbd972a384beb8f # v1.0.0
+    uses: defenseunicorns/uds-common/.github/workflows/callable-commitlint.yaml@86886015d1edc43036b3dd000fbd972a384beb8f # v1.0.0

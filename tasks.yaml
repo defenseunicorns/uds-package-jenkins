@@ -1,97 +1,82 @@
 includes:
   - cleanup: ./tasks/cleanup.yaml
   - test: ./tasks/test.yaml
+  - publish: ./tasks/publish.yaml
   - create: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.0.0/tasks/create.yaml
   - lint: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.0.0/tasks/lint.yaml
   - pull: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.0.0/tasks/pull.yaml
   - deploy: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.0.0/tasks/deploy.yaml
-  - upgrade: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.0.0/tasks/upgrade.yaml
   - setup: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.0.0/tasks/setup.yaml
+  - actions: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.0.0/tasks/actions.yaml
+  - badge: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.0.0/tasks/badge.yaml
+  - upgrade: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.0.0/tasks/upgrade.yaml
+  - compliance: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.0.0/tasks/compliance.yaml
 
 tasks:
   - name: default
-    description: Create K3D Cluster with UDS-Core + Jenkins
+    description: Create K3D Cluster with lite UDS-Core + Jenkins
     actions:
-      - task: create-jenkins-test-bundle
+      - task: create-dev-package
       - task: setup:k3d-test-cluster
-        # TODO: Remove pinned version after uds-common releases 0.12.1 or later
-        with:
-          version: 0.26.1
-      - task: deploy:test-bundle
+      - task: create-deploy-test-bundle
 
   - name: default-full
-    description: Create K3D Cluster with UDS-Core + Jenkins
+    description: Create K3D Cluster with full UDS-Core + Jenkins
     actions:
-      - task: create-jenkins-test-bundle
+      - task: create-dev-package
       - task: setup:k3d-full-cluster
-        # TODO: Remove pinned version after uds-common releases 0.12.1 or later
-        with:
-          version: 0.26.1
-      - task: deploy:test-bundle
+      - task: create-deploy-test-bundle
 
-  - name: create-jenkins-package
-    description: Create UDS Jenkins Package
+  - name: create-dev-package
+    description: Create the Jenkins package
     actions:
       - task: create:package
         with:
           options: "--skip-sbom"
 
-  - name: create-jenkins-test-bundle
-    description: Create a local UDS Jenkins bundle
+  - name: create-deploy-test-bundle
+    description: Test and validate cluster is deployed with Jenkins
     actions:
-      - task: create-jenkins-package
+      - task: dependencies:create
       - task: create:test-bundle
-
-  - name: create-jenkins-latest-release-bundle
-    description: Create UDS Jenkins bundle based on the latest release
-    actions:
-      - task: pull:latest-package-release
-        with:
-          spoof_release: "true"
-      - task: create:test-bundle
-
-  - name: setup-cluster
-    description: Setup a K3D cluster with UDS-Core-Slim
-    actions:
-      - task: setup:k3d-test-cluster
-        # TODO: Remove pinned version after uds-common releases 0.12.1 or later
-        with:
-          version: 0.26.1
+      - task: deploy:test-bundle
+      - task: setup:create-doug-user
+      - task: test:all
 
   - name: dev
-    description: Create then deploy local jenkins bundle
+    description: Create and deploy the bundle on an existing cluster (for iteration/dev speed)
     actions:
-      - task: create-jenkins-test-bundle
+      - task: create-dev-package
+      - task: create:test-bundle
       - task: deploy:test-bundle
 
-# CI will execute the following (via uds-common/.github/actions/test) so they need to be here with these names
+# CI will execute the following (via uds-common/.github/workflows/callable-[test|publish].yaml) so they need to be here with these names
 
   - name: test-package
     description: Test the Jenkins package from the current branch
     actions:
-      - task: create-jenkins-test-bundle
+      - task: create-dev-package
       - task: setup:k3d-test-cluster
-        # TODO: Remove pinned version after uds-common releases 0.12.1 or later
-        with:
-          version: 0.26.1
-      - task: deploy:test-bundle
-      - task: setup:create-doug-user
-      - task: test:health-check
-      - task: test:ingress
-      - task: test:ui
+      - task: create-deploy-test-bundle
+      - task: compliance:validate
 
   - name: test-upgrade
     description: Test an upgrade from the latest released package to the current branch
     actions:
       - task: upgrade:create-latest-tag-bundle
       - task: setup:k3d-test-cluster
-        # TODO: Remove pinned version after uds-common releases 0.12.1 or later
-        with:
-          version: 0.26.1
       - task: deploy:test-bundle
-      - task: create-jenkins-test-bundle
-      - task: deploy:test-bundle
-      - task: setup:create-doug-user
-      - task: test:health-check
-      - task: test:ingress
-      - task: test:ui
+      - task: compliance:validate
+      - task: create-dev-package
+      - task: create-deploy-test-bundle
+      - task: compliance:validate
+      - task: compliance:evaluate
+
+  - name: publish-package
+    description: Build and publish the packages
+    actions:
+      - task: actions:determine-arch
+      - task: publish:build-package
+      - task: create-deploy-test-bundle
+        if: ${{ and (ne .variables.FLAVOR "upstream") (ne .variables.ARCH "arm64") }}
+      - task: publish:publish-package
