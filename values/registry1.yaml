@@ -9,6 +9,22 @@ controller:
         registry: "registry1.dso.mil"
         repository: "ironbank/kiwigrid/k8s-sidecar"
         tag: "1.27.6"
+  installPlugins:
+    - kubernetes:4287.v73451380b_576
+    - workflow-aggregator:600.vb_57cdd26fdd7
+    - git:5.2.2
+    - configuration-as-code:1850.va_a_8c31d3158b_
+    - oic-auth:4.340.ve70636c6590e
+    - prometheus:784.vea_eca_f6592eb_
+    - cloudbees-disk-usage-simple:203.v3f46a_7462b_1a_
+    - saml:4.487.v9f1c3328f1c0
+    - okhttp-api:4.11.0-181.v1de5b_83857df
+    - pipeline-graph-analysis:216.vfd8b_ece330ca_
+    - pipeline-model-definition:2.2214.vb_b_34b_2ea_9b_83
+    - pipeline-model-extensions:2.2214.vb_b_34b_2ea_9b_83
+    - pipeline-rest-api:2.34
+    - workflow-job:1436.vfa_244484591f
+    - workflow-multibranch:795.ve0cb_1f45ca_9a_
 
 agent:
   image:
