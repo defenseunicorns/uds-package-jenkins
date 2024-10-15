@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.6.1-uds.1](https://github.com/defenseunicorns/uds-package-jenkins/compare/v5.6.1-uds.0...v5.6.1-uds.1) (2024-10-15)
+
+
+### Miscellaneous
+
+* update CODEOWNERS ([#82](https://github.com/defenseunicorns/uds-package-jenkins/issues/82)) ([38acd84](https://github.com/defenseunicorns/uds-package-jenkins/commit/38acd840b8f20697d1ee9508862705fccca5c9ee))
+
 ## [5.6.1-uds.0](https://github.com/defenseunicorns/uds-package-jenkins/compare/v5.5.14-uds.1...v5.6.1-uds.0) (2024-09-17)
 
 
