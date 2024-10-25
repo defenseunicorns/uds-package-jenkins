@@ -94,6 +94,7 @@ jobs:
 
       - name: Test
         uses: defenseunicorns/uds-common/.github/workflows/callable-publish.yaml@f0164622ffc2007e96a0e1deaa3f5064db04b148 # v1.1.0
+        with:
           upgrade-flavors: ${{ needs.flavor-test.outputs.upgrade-flavors }}
           flavor: ${{ matrix.flavor }}
           type: ${{ matrix.type }}
