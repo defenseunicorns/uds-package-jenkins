@@ -3,7 +3,6 @@
 [<img alt="Made for UDS" src="https://github.com/defenseunicorns/uds-common/blob/main/docs/made-for-uds.svg" height="20px"/>](https://github.com/defenseunicorns/uds-core)
 [![Latest Release](https://img.shields.io/github/v/release/defenseunicorns/uds-package-jenkins)](https://github.com/defenseunicorns/uds-package-jenkins/releases)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/defenseunicorns/uds-package-jenkins/tag-and-release.yaml)](https://github.com/defenseunicorns/uds-package-jenkins/actions/workflows/tag-and-release.yaml)
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/defenseunicorns/uds-package-jenkins/badge)](https://api.securityscorecards.dev/projects/github.com/defenseunicorns/uds-package-jenkins)
 
 This package is designed to be deployed on [UDS Core](https://github.com/defenseunicorns/uds-core), and is based on the upstream [Jenkins](https://github.com/jenkinsci/helm-charts/tree/main/charts/jenkins) chart.
 
