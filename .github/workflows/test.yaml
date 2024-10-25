@@ -42,7 +42,7 @@ jobs:
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
 
       - name: test-flavor
-        uses: defenseunicorns/uds-common/.github/actions/test-flavor@24c8a2a48eeb33773b76b3587c489cb17496c9e0 # v0.12.0
+        uses: defenseunicorns/uds-common/.github/workflows/callable-publish.yaml@f0164622ffc2007e96a0e1deaa3f5064db04b148 # v1.1.0
         id: test-flavor
     outputs:
       upgrade-flavors: ${{ steps.test-flavor.outputs.upgrade-flavors }}
@@ -82,7 +82,7 @@ jobs:
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
 
       - name: Environment setup
-        uses: defenseunicorns/uds-common/.github/actions/setup@24c8a2a48eeb33773b76b3587c489cb17496c9e0 # v0.12.0
+        uses: defenseunicorns/uds-common/.github/workflows/callable-publish.yaml@f0164622ffc2007e96a0e1deaa3f5064db04b148 # v1.1.0
         with:
           registry1Username: ${{ secrets.IRON_BANK_ROBOT_USERNAME }}
           registry1Password: ${{ secrets.IRON_BANK_ROBOT_PASSWORD }}
@@ -90,18 +90,17 @@ jobs:
           chainguardIdentity: ${{ secrets.CHAINGUARD_IDENTITY }}
 
       - name: Playwright setup
-        uses: defenseunicorns/uds-common/.github/actions/playwright@24c8a2a48eeb33773b76b3587c489cb17496c9e0 # v0.12.0
+        uses: defenseunicorns/uds-common/.github/workflows/callable-publish.yaml@f0164622ffc2007e96a0e1deaa3f5064db04b148 # v1.1.0
 
       - name: Test
-        uses: defenseunicorns/uds-common/.github/actions/test-deploy@24c8a2a48eeb33773b76b3587c489cb17496c9e0 # v0.12.0
-        with:
+        uses: defenseunicorns/uds-common/.github/workflows/callable-publish.yaml@f0164622ffc2007e96a0e1deaa3f5064db04b148 # v1.1.0
           upgrade-flavors: ${{ needs.flavor-test.outputs.upgrade-flavors }}
           flavor: ${{ matrix.flavor }}
           type: ${{ matrix.type }}
 
       - name: Save logs
         if: always()
-        uses: defenseunicorns/uds-common/.github/actions/save-logs@24c8a2a48eeb33773b76b3587c489cb17496c9e0 # v0.12.0
+        uses: defenseunicorns/uds-common/.github/workflows/callable-publish.yaml@f0164622ffc2007e96a0e1deaa3f5064db04b148 # v1.1.0
         with:
           suffix: ${{ matrix.type }}-${{ matrix.flavor }}-${{ github.run_id }}-${{ github.run_attempt }}
 
