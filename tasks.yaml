@@ -1,6 +1,5 @@
 includes:
   - test: ./tasks/test.yaml
-  - dependencies: ./tasks/dependencies.yaml
   - create: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.1.0/tasks/create.yaml
   - lint: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.1.0/tasks/lint.yaml
   - pull: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.1.0/tasks/pull.yaml
@@ -36,8 +35,7 @@ tasks:
 
   - name: create-deploy-test-bundle
     description: Test and validate cluster is deployed with Jenkins
-    actions:
-      - task: dependencies:create
+    actions
       - task: create:test-bundle
       - task: deploy:test-bundle
       - task: setup:create-doug-user
@@ -55,7 +53,6 @@ tasks:
   - name: test-package
     description: Test the Jenkins package from the current branch
     actions:
-      - task: dependencies:create
       - task: create-dev-package
       - task: setup:k3d-test-cluster
       - task: create-deploy-test-bundle
@@ -64,7 +61,6 @@ tasks:
   - name: test-upgrade
     description: Test an upgrade from the latest released package to the current branch
     actions:
-      - task: dependencies:create
       - task: upgrade:create-latest-tag-bundle
       - task: setup:k3d-test-cluster
       - task: deploy:test-bundle

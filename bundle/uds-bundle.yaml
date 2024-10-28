@@ -4,7 +4,7 @@
 kind: UDSBundle
 metadata:
   name: jenkins-test
-  description: A UDS bundle for deploying jenkins and it's dependencies on a development cluster
+  description: A UDS bundle for deploying jenkins on a development cluster
   # x-release-please-start-version
   version: 5.6.1-uds.0
   # x-release-please-end
