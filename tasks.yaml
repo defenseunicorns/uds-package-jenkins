@@ -19,7 +19,7 @@ tasks:
       - task: create-dev-package
       - task: setup:k3d-full-cluster
       - task: create-deploy-test-bundle
-  
+
   - name: default-full
     description: Create K3D Cluster with full UDS-Core + Jenkins
     actions:
@@ -71,7 +71,6 @@ tasks:
       - task: create-dev-package
       - task: create-deploy-test-bundle
 
-  
   - name: publish-package
     description: Build and publish the packages
     actions:

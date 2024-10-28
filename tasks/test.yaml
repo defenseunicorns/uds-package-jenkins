@@ -3,11 +3,11 @@
 
 tasks:
   - name: all
-  description: Create K3D Cluster with UDS-Core + Securecodebox
-  actions:
-    - task: health-check
-    - task: ingress
-  
+    description: Create K3D Cluster with UDS-Core + Securecodebox
+    actions:
+      - task: health-check
+      - task: ingress
+
   - name: health-check
     actions:
       - description: Jenkins StatefulSet Health Check
