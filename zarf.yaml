@@ -1,10 +1,13 @@
+# Copyright 2024 Defense Unicorns
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-Defense-Unicorns-Commercial
+
 # yaml-language-server: $schema=https://raw.githubusercontent.com/defenseunicorns/zarf/main/zarf.schema.json
 kind: ZarfPackageConfig
 metadata:
   name: jenkins
   description: "UDS Jenkins package"
   # x-release-please-start-version
-  version: "5.6.1-uds.0"
+  version: "5.6.1-uds.1"
   # x-release-please-end
   architecture: amd64
 
@@ -34,8 +37,8 @@ components:
         valuesFiles:
           - values/upstream.yaml
     images:
-      - docker.io/jenkins/jenkins:2.476-jdk17
-      - docker.io/kiwigrid/k8s-sidecar:1.27.6
+      - docker.io/jenkins/jenkins:2.483-jdk17
+      - docker.io/kiwigrid/k8s-sidecar:1.28.0
       - docker.io/jenkins/inbound-agent:3256.v88a_f6e922152-1
 
   - name: jenkins
@@ -52,11 +55,10 @@ components:
         valuesFiles:
           - values/registry1.yaml
     images:
-      - registry1.dso.mil/ironbank/opensource/jenkins/jenkins:2.476-jdk17
+      - registry1.dso.mil/ironbank/opensource/jenkins/jenkins:2.482-jdk17
       - registry1.dso.mil/ironbank/opensource/jenkins/inbound-agent:3186.vc3b_7249b_87eb_-1
-      - registry1.dso.mil/ironbank/kiwigrid/k8s-sidecar:1.27.6
+      - registry1.dso.mil/ironbank/kiwigrid/k8s-sidecar:1.28.0
 
-  # Note: unicorn flavor is experimental
   - name: jenkins
     required: true
     description: "Deploy jenkins with unicorn images"
@@ -71,6 +73,6 @@ components:
         valuesFiles:
           - values/unicorn.yaml
     images:
-      - cgr.dev/du-uds-defenseunicorns/jenkins:2.476
+      - cgr.dev/du-uds-defenseunicorns/jenkins:2.480
       - registry1.dso.mil/ironbank/opensource/jenkins/inbound-agent:3186.vc3b_7249b_87eb_-1
-      - cgr.dev/du-uds-defenseunicorns/k8s-sidecar:1.27.6
+      - cgr.dev/du-uds-defenseunicorns/k8s-sidecar:1.28.0

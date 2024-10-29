@@ -1,16 +1,19 @@
+# Copyright 2024 Defense Unicorns
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-Defense-Unicorns-Commercial
+
 kind: UDSBundle
 metadata:
   name: jenkins-test
-  description: A UDS bundle for deploying jenkins and it's dependencies on a development cluster
+  description: A UDS bundle for deploying jenkins on a development cluster
   # x-release-please-start-version
-  version: 5.6.1-uds.0
+  version: 5.6.1-uds.1
   # x-release-please-end
 
 packages:
   - name: jenkins
     path: ../
     # x-release-please-start-version
-    ref: 5.6.1-uds.0
+    ref: 5.6.1-uds.1
     # x-release-please-end
     overrides:
       uds-jenkins-config:
