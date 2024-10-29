@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.6.1-uds.1](https://github.com/defenseunicorns/uds-package-jenkins/compare/v5.6.1-uds.0...v5.6.1-uds.1) (2024-10-29)
+
+
+### Miscellaneous
+
+* add licensing ([7fd55fd](https://github.com/defenseunicorns/uds-package-jenkins/commit/7fd55fd20ccfb25cfa0ffa63af2523c52239e725))
+* add licensing and lint ([2dfff33](https://github.com/defenseunicorns/uds-package-jenkins/commit/2dfff33ae42a11867ccf9364578f4be4c6537e7f))
+* add linting fixes ([684da33](https://github.com/defenseunicorns/uds-package-jenkins/commit/684da33d081fe161942978cfbff8487ffab43f84))
+* add registry1 ([025d875](https://github.com/defenseunicorns/uds-package-jenkins/commit/025d875dfb5f247aa07e044098d8f45614537d41))
+* change lint.yaml ([7f84661](https://github.com/defenseunicorns/uds-package-jenkins/commit/7f84661dc0c4a09d36563cfdf5f1dc63be6fa6ec))
+* change lint.yaml ([619bf70](https://github.com/defenseunicorns/uds-package-jenkins/commit/619bf70e035b751ced91768b891e498a942caa7b))
+* exclude registry1 ([4b50b48](https://github.com/defenseunicorns/uds-package-jenkins/commit/4b50b489096eb5cea3d4239acdbdeae5aff779fc))
+* fix linting ([ccf6a46](https://github.com/defenseunicorns/uds-package-jenkins/commit/ccf6a46acbe0232816e89b297fd3f5c5e1358534))
+* fix linting ([5b3bdc8](https://github.com/defenseunicorns/uds-package-jenkins/commit/5b3bdc892cae4cc6cea753e5a27bc789e4e95e04))
+* fix linting ([fd91694](https://github.com/defenseunicorns/uds-package-jenkins/commit/fd91694c1dde42aa4283c7a86f9cb23bd85ce0fe))
+* fix linting ([52d1dd3](https://github.com/defenseunicorns/uds-package-jenkins/commit/52d1dd333a058a717e021537e52aa4170d531da8))
+* fix typo ([c97cad5](https://github.com/defenseunicorns/uds-package-jenkins/commit/c97cad5040f8e25d360daf7d764632ae628d4033))
+* fix typo ([cdd45a7](https://github.com/defenseunicorns/uds-package-jenkins/commit/cdd45a7eda4f4456e5ec8d0017346b8033d9257d))
+* fix typo ([6378a05](https://github.com/defenseunicorns/uds-package-jenkins/commit/6378a05ae7a1f3fba724821413530bc15638daf1))
+* **main:** update release please config ([378439f](https://github.com/defenseunicorns/uds-package-jenkins/commit/378439f340e392b61053244e5225542269b1fc31))
+* **main:** update release.yaml ([9a5189a](https://github.com/defenseunicorns/uds-package-jenkins/commit/9a5189ae4a2094993afa164e40ceaf150caa0017))
+* **main:** update release.yaml ([8fc654d](https://github.com/defenseunicorns/uds-package-jenkins/commit/8fc654d799ba39da958335b67cf957652c86295f))
+* **main:** update scorecard ([73fe56e](https://github.com/defenseunicorns/uds-package-jenkins/commit/73fe56eb15bdf081ba22f8ce2d8b764ccb1bd51e))
+* **main:** update test.yaml ([afe1f5f](https://github.com/defenseunicorns/uds-package-jenkins/commit/afe1f5fcb37b0e154764abde278d73ade6310bd4))
+* **main:** update test.yaml ([c7e8e38](https://github.com/defenseunicorns/uds-package-jenkins/commit/c7e8e38160985b05a0b6a306944f90c87b7c951d))
+* release unicorn flavor ([a5c5c0a](https://github.com/defenseunicorns/uds-package-jenkins/commit/a5c5c0a6239a41f1fddef90e48c2e222e592a80a))
+* release unicorn flavor ([8c4ae35](https://github.com/defenseunicorns/uds-package-jenkins/commit/8c4ae3536d6cd615724a66b1c65cba2a2bcc3823))
+* remove unecessary files ([a567e77](https://github.com/defenseunicorns/uds-package-jenkins/commit/a567e771f9f7388baa4370597a2f748e489b7765))
+* update CODEOWNERS ([#82](https://github.com/defenseunicorns/uds-package-jenkins/issues/82)) ([38acd84](https://github.com/defenseunicorns/uds-package-jenkins/commit/38acd840b8f20697d1ee9508862705fccca5c9ee))
+* update dependencies ([9a64c0f](https://github.com/defenseunicorns/uds-package-jenkins/commit/9a64c0ff2940eb3643eaa6d73b6a27f9c3825556))
+
 ## [5.6.1-uds.0](https://github.com/defenseunicorns/uds-package-jenkins/compare/v5.5.14-uds.1...v5.6.1-uds.0) (2024-09-17)
 
 
