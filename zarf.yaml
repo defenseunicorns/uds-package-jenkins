@@ -1,3 +1,6 @@
+# Copyright 2024 Defense Unicorns
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-Defense-Unicorns-Commercial
+
 # yaml-language-server: $schema=https://raw.githubusercontent.com/defenseunicorns/zarf/main/zarf.schema.json
 kind: ZarfPackageConfig
 metadata:
@@ -56,7 +59,6 @@ components:
       - registry1.dso.mil/ironbank/opensource/jenkins/inbound-agent:3186.vc3b_7249b_87eb_-1
       - registry1.dso.mil/ironbank/kiwigrid/k8s-sidecar:1.27.6
 
-  # Note: unicorn flavor is experimental
   - name: jenkins
     required: true
     description: "Deploy jenkins with unicorn images"
