@@ -1,14 +1,17 @@
+# Copyright 2024 Defense Unicorns
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-Defense-Unicorns-Commercial
+
 controller:
   image:
     registry: "cgr.dev"
     repository: "du-uds-defenseunicorns/jenkins"
-    tag: "2.476"
+    tag: "2.480"
   sidecars:
     configAutoReload:
       image:
         registry: "cgr.dev"
         repository: "du-uds-defenseunicorns/k8s-sidecar"
-        tag: "1.27.6"
+        tag: "1.28.0"
 
 agent:
   image:
