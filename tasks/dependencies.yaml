@@ -1,5 +1,0 @@
-tasks:
-  - name: create
-    description: There are no dependencies for Jenkins
-    actions:
-      - cmd: echo "There are no dependencies for Jenkins"
