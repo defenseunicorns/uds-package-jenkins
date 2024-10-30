@@ -1,24 +1,25 @@
+# Copyright 2024 Defense Unicorns
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-Defense-Unicorns-Commercial
+
 includes:
-  - cleanup: ./tasks/cleanup.yaml
-  - dependencies: ./tasks/dependencies.yaml
   - test: ./tasks/test.yaml
-  - publish: ./tasks/publish.yaml
-  - create: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.0.0/tasks/create.yaml
-  - lint: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.0.0/tasks/lint.yaml
-  - pull: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.0.0/tasks/pull.yaml
-  - deploy: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.0.0/tasks/deploy.yaml
-  - setup: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.0.0/tasks/setup.yaml
-  - actions: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.0.0/tasks/actions.yaml
-  - badge: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.0.0/tasks/badge.yaml
-  - upgrade: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.0.0/tasks/upgrade.yaml
-  - compliance: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.0.0/tasks/compliance.yaml
+  - create: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.1.0/tasks/create.yaml
+  - lint: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.1.0/tasks/lint.yaml
+  - pull: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.1.0/tasks/pull.yaml
+  - deploy: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.1.0/tasks/deploy.yaml
+  - setup: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.1.0/tasks/setup.yaml
+  - actions: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.1.0/tasks/actions.yaml
+  - badge: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.1.0/tasks/badge.yaml
+  - upgrade: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.1.0/tasks/upgrade.yaml
+  - compliance: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.1.0/tasks/compliance.yaml
+  - publish: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.1.0/tasks/publish.yaml
 
 tasks:
   - name: default
     description: Create K3D Cluster with lite UDS-Core + Jenkins
     actions:
       - task: create-dev-package
-      - task: setup:k3d-test-cluster
+      - task: setup:k3d-full-cluster
       - task: create-deploy-test-bundle
 
   - name: default-full
@@ -29,7 +30,7 @@ tasks:
       - task: create-deploy-test-bundle
 
   - name: create-dev-package
-    description: Create the Jenkins package
+    description: Create UDS Jenkins Package
     actions:
       - task: create:package
         with:
@@ -38,7 +39,6 @@ tasks:
   - name: create-deploy-test-bundle
     description: Test and validate cluster is deployed with Jenkins
     actions:
-      - task: dependencies:create
       - task: create:test-bundle
       - task: deploy:test-bundle
       - task: setup:create-doug-user
@@ -59,8 +59,7 @@ tasks:
       - task: create-dev-package
       - task: setup:k3d-test-cluster
       - task: create-deploy-test-bundle
-      # TODO: OSCAL things need to be added
-      # - task: compliance:validate
+      - task: test:ui
 
   - name: test-upgrade
     description: Test an upgrade from the latest released package to the current branch
@@ -68,19 +67,24 @@ tasks:
       - task: upgrade:create-latest-tag-bundle
       - task: setup:k3d-test-cluster
       - task: deploy:test-bundle
-      # TODO: OSCAL things need to be added
-      # - task: compliance:validate
       - task: create-dev-package
       - task: create-deploy-test-bundle
-      # TODO: OSCAL things need to be added
-      # - task: compliance:validate
-      # - task: compliance:evaluate
 
   - name: publish-package
     description: Build and publish the packages
     actions:
-      - task: actions:determine-arch
-      - task: publish:build-package
-      - task: create-deploy-test-bundle
-        if: ${{ and (ne .variables.FLAVOR "upstream") (ne .variables.ARCH "arm64") }}
-      - task: publish:publish-package
+      - description: Create the package
+        task: create:package
+
+      - description: Setup the cluster
+        task: setup:k3d-test-cluster
+
+      - description: Create deploy and test the bundle
+        task: create-deploy-test-bundle
+
+      - description: Publish the packages
+        task: publish:package
+        with:
+          # x-release-please-start-version
+          version: 5.6.1-uds.1
+          # x-release-please-end
