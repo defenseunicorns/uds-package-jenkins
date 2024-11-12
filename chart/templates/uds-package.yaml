@@ -17,11 +17,17 @@ spec:
 
       protocol: saml
       defaultClientScopes:
+      {{- if .Values.sso.defaultClientScopes }}
+        {{- range .Values.sso.defaultClientScopes }}
+          - "{{ . }}"
+        {{- end }}
+      {{- else }}
         - "mapper-saml-email-email"
         - "mapper-saml-firstname-first_name"
         - "mapper-saml-lastname-last_name"
         - "mapper-saml-grouplist-groups"
         - "mapper-saml-username-name"
+      {{- end }}
 
       attributes:
         saml.client.signature: "false"

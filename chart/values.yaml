@@ -8,6 +8,7 @@ sso:
   secretName: jenkins-sso
   # protocol should be either 'saml' or 'openid_connect'
   protocol: saml
+  defaultClientScopes: {}
 
 # customNetworkPolicies:
 #    # Notice no `remoteGenerated` field here on custom internal rule
