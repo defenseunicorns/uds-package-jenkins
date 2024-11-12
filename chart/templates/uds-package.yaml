@@ -50,6 +50,12 @@ spec:
       clientId: uds-package-jenkins-openid-connect
 
       protocol: openid-connect
+      defaultClientScopes:
+      {{- if .Values.sso.defaultClientScopes }}
+        {{- range .Values.sso.defaultClientScopes }}
+          - "{{ . }}"
+        {{- end }}
+      {{- end }}
 
       secretName: {{ .Values.sso.secretName }}
       secretTemplate:
