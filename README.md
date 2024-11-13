@@ -6,6 +6,8 @@
 
 This package is designed to be deployed on [UDS Core](https://github.com/defenseunicorns/uds-core), and is based on the upstream [Jenkins](https://github.com/jenkinsci/helm-charts/tree/main/charts/jenkins) chart.
 
+> Jenkins is a powerful open-source automation server that streamlines the software development process by automating tasks like building, testing, and deploying, enabling continuous integration and continuous delivery.
+
 ## Pre-requisites
 
 The Jenkins Package expects to be deployed on top of [UDS Core](https://github.com/defenseunicorns/uds-core).
