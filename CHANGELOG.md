@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.479.1-uds.0](https://github.com/defenseunicorns/uds-package-jenkins/compare/v5.6.1-uds.2...v2.479.1-uds.0) (2024-11-14)
+
+
+### Features
+
+* adds functionality to edit the default scopes for keycloak ([f46263a](https://github.com/defenseunicorns/uds-package-jenkins/commit/f46263ae1b37113f0d1fdccf5ec9af13cca3e6e3))
+
+
+### Miscellaneous
+
+* **deps:** update jenkins package dependencies ([#90](https://github.com/defenseunicorns/uds-package-jenkins/issues/90)) ([cc8e467](https://github.com/defenseunicorns/uds-package-jenkins/commit/cc8e4677be7e1614a0cecba41d407b824551d8e2))
+* **deps:** update jenkins plugin dependencies ([#93](https://github.com/defenseunicorns/uds-package-jenkins/issues/93)) ([5456280](https://github.com/defenseunicorns/uds-package-jenkins/commit/54562803b6c7de7a36074173df4a01b1e96ad97d))
+* **deps:** update jenkins support dependencies ([#91](https://github.com/defenseunicorns/uds-package-jenkins/issues/91)) ([0e6f9e6](https://github.com/defenseunicorns/uds-package-jenkins/commit/0e6f9e61f756b0fc52bfb5d20f9df6599dba2009))
+* release 2.479.1-uds.0 ([392441c](https://github.com/defenseunicorns/uds-package-jenkins/commit/392441cbad2bb66527d88bb47b51a8535f6231b4))
+
 ## [5.6.1-uds.2](https://github.com/defenseunicorns/uds-package-jenkins/compare/v5.6.1-uds.1...v5.6.1-uds.2) (2024-10-29)
 
 
