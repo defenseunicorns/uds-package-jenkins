@@ -9,7 +9,8 @@ sso:
   # protocol should be either 'saml' or 'openid_connect'
   protocol: saml
   # This will replace the current list of default client scopes.
-  defaultClientScopes: {}
+  defaultClientScopes: []
+  requiredGroups: []
 
 # customNetworkPolicies:
 #    # Notice no `remoteGenerated` field here on custom internal rule
