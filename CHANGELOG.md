@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.480.0-uds.1](https://github.com/defenseunicorns/uds-package-jenkins/compare/v2.480.0-uds.0...v2.480.0-uds.1) (2024-11-22)
+
+
+### Features
+
+* add ability to set user groups for access ([#101](https://github.com/defenseunicorns/uds-package-jenkins/issues/101)) ([8509d22](https://github.com/defenseunicorns/uds-package-jenkins/commit/8509d222d32832ca16c6bec79ac9209f1c96a538))
+
+
+### Miscellaneous
+
+* **deps:** update jenkins package dependencies ([#103](https://github.com/defenseunicorns/uds-package-jenkins/issues/103)) ([9938cee](https://github.com/defenseunicorns/uds-package-jenkins/commit/9938cee78f78c1906f7422d1078005a302b5d6e1))
+* **deps:** update plugin-deps to v1897 ([#104](https://github.com/defenseunicorns/uds-package-jenkins/issues/104)) ([20ab006](https://github.com/defenseunicorns/uds-package-jenkins/commit/20ab0064da1e56558d19a41c43f4e0d28fceaf56))
+* release 2.480.0-uds.1 ([94f8bf1](https://github.com/defenseunicorns/uds-package-jenkins/commit/94f8bf160a6e5ce0037a2ed2906be846b318809d))
+
 ## [2.480.0-uds.0](https://github.com/defenseunicorns/uds-package-jenkins/compare/v2.479.1-uds.0...v2.480.0-uds.0) (2024-11-18)
 
 
