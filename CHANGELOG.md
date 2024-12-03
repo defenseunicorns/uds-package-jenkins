@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.480.0-uds.2](https://github.com/defenseunicorns/uds-package-jenkins/compare/v2.480.0-uds.1...v2.480.0-uds.2) (2024-12-03)
+
+
+### Miscellaneous
+
+* **deps:** update jenkins package dependencies ([#107](https://github.com/defenseunicorns/uds-package-jenkins/issues/107)) ([4aec3ac](https://github.com/defenseunicorns/uds-package-jenkins/commit/4aec3ac846aa12a6e62c63c786eab25271a28802))
+* **deps:** update jenkins plugin dependencies ([#108](https://github.com/defenseunicorns/uds-package-jenkins/issues/108)) ([20d88f4](https://github.com/defenseunicorns/uds-package-jenkins/commit/20d88f49c5cdbe490d40cf66e99bb94235a099eb))
+* **deps:** update jenkins support dependencies ([#109](https://github.com/defenseunicorns/uds-package-jenkins/issues/109)) ([c2e64d4](https://github.com/defenseunicorns/uds-package-jenkins/commit/c2e64d41457501df3e06208c882cd2e80471affc))
+* **deps:** update support-deps to v1.4.0 ([#105](https://github.com/defenseunicorns/uds-package-jenkins/issues/105)) ([3e167d2](https://github.com/defenseunicorns/uds-package-jenkins/commit/3e167d27793696c9fdcc1990995ddabf1fef8eb8))
+
 ## [2.480.0-uds.1](https://github.com/defenseunicorns/uds-package-jenkins/compare/v2.480.0-uds.0...v2.480.0-uds.1) (2024-11-22)
 
 
