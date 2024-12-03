@@ -37,7 +37,7 @@ components:
         valuesFiles:
           - values/upstream.yaml
     images:
-      - docker.io/jenkins/jenkins:2.486-jdk17
+      - docker.io/jenkins/jenkins:2.488-jdk17
       - docker.io/kiwigrid/k8s-sidecar:1.28.0
       - docker.io/jenkins/inbound-agent:3256.v88a_f6e922152-1
 
