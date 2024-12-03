@@ -31,3 +31,4 @@ terraform.tfstate.backup
 node_modules/
 .playwright/
 screenshots/
+tests/package-lock.json
