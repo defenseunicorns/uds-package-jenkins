@@ -19,10 +19,10 @@ controller:
       cpu: "2000m"
       memory: "8192Mi"
   installPlugins:
-    - kubernetes:4296.v20a_7e4d77cf6
+    - kubernetes:4300.vd82c5692b_3a_e
     - workflow-aggregator:600.vb_57cdd26fdd7
     - git:5.2.2
-    - configuration-as-code:1897.v79281e066ea_7
+    - configuration-as-code:1903.v004d55388f30
     - oic-auth:4.421.v5422614eb_e0a_
     - prometheus:795.v995762102f28
     - cloudbees-disk-usage-simple:232.v713eeed2e1f4
