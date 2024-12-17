@@ -41,7 +41,7 @@ components:
       - name: jenkins
         namespace: jenkins
         url: https://charts.jenkins.io
-        version: 5.7.20
+        version: 5.7.21
         repoName: jenkins
         releaseName: jenkins
         valuesFiles:
