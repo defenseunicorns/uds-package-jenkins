@@ -11,7 +11,7 @@ controller:
       image:
         registry: "cgr.dev"
         repository: "du-uds-defenseunicorns/k8s-sidecar"
-        tag: "1.28.0"
+        tag: "1.28.3"
 
 agent:
   image:
