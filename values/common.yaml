@@ -23,10 +23,10 @@ controller:
     - workflow-aggregator:600.vb_57cdd26fdd7
     - git:5.2.2
     - configuration-as-code:1903.v004d55388f30
-    - oic-auth:4.421.v5422614eb_e0a_
-    - prometheus:795.v995762102f28
+    - oic-auth:4.438.v6e62f6782770
+    - prometheus:801.v98e119d8eeda_
     - cloudbees-disk-usage-simple:232.v713eeed2e1f4
-    - saml:4.501.v4313a_01e3a_18
+    - saml:4.511.vef666858a_167
     - okhttp-api:4.11.0-181.v1de5b_83857df
   overwritePlugins: true
   JCasC:
