@@ -6,7 +6,7 @@ kind: ZarfPackageConfig
 metadata:
   name: jenkins
   description: "UDS Jenkins package"
-  version: "2.480.0-uds.3"
+  version: dev
   architecture: amd64
 
 variables:

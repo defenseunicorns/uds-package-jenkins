@@ -5,12 +5,12 @@ kind: UDSBundle
 metadata:
   name: jenkins-test
   description: A UDS bundle for deploying jenkins on a development cluster
-  version: 2.480.0-uds.3
+  version: dev
 
 packages:
   - name: jenkins
     path: ../
-    ref: 2.480.0-uds.3
+    ref: dev
     overrides:
       uds-jenkins-config:
         uds-jenkins-config:
