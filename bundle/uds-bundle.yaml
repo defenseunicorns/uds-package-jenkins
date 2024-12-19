@@ -5,16 +5,12 @@ kind: UDSBundle
 metadata:
   name: jenkins-test
   description: A UDS bundle for deploying jenkins on a development cluster
-  # x-release-please-start-version
   version: 2.480.0-uds.3
-  # x-release-please-end
 
 packages:
   - name: jenkins
     path: ../
-    # x-release-please-start-version
     ref: 2.480.0-uds.3
-    # x-release-please-end
     overrides:
       uds-jenkins-config:
         uds-jenkins-config:
