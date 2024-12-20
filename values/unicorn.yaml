@@ -5,7 +5,7 @@ controller:
   image:
     registry: "cgr.dev"
     repository: "du-uds-defenseunicorns/jenkins"
-    tag: "2.490"
+    tag: "2.491"
   sidecars:
     configAutoReload:
       image:
