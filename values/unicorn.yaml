@@ -5,13 +5,13 @@ controller:
   image:
     registry: "cgr.dev"
     repository: "du-uds-defenseunicorns/jenkins"
-    tag: "2.491"
+    tag: "2.492"
   sidecars:
     configAutoReload:
       image:
         registry: "cgr.dev"
         repository: "du-uds-defenseunicorns/k8s-sidecar"
-        tag: "1.28.4"
+        tag: "1.29.0"
 
 agent:
   image:
