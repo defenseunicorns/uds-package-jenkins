@@ -22,8 +22,8 @@ controller:
     - kubernetes:4306.vc91e951ea_eb_d
     - workflow-aggregator:600.vb_57cdd26fdd7
     - git:5.2.2
-    - configuration-as-code:1915.vcdd0a_d0d2625
-    - oic-auth:4.452.v2849b_d3945fa_
+    - configuration-as-code:1929.v036b_5a_e1f123
+    - oic-auth:4.457.v8d7c72676cfe
     - prometheus:801.v98e119d8eeda_
     - cloudbees-disk-usage-simple:232.v713eeed2e1f4
     - saml:4.519.v3927f2f0e020
