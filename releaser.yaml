@@ -10,4 +10,4 @@ flavors:
     version: 2.488-uds.0
   - name: unicorn
     # renovate-uds: datasource=docker depName=cgr.dev/du-uds-defenseunicorns/jenkins
-    version: 2.494-uds.0
+    version: 2.495-uds.0
