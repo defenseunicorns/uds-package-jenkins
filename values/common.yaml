@@ -22,11 +22,11 @@ controller:
     - kubernetes:4306.vc91e951ea_eb_d
     - workflow-aggregator:600.vb_57cdd26fdd7
     - git:5.2.2
-    - configuration-as-code:1929.v036b_5a_e1f123
+    - configuration-as-code:1932.v75cb_b_f1b_698d
     - oic-auth:4.457.v8d7c72676cfe
-    - prometheus:801.v98e119d8eeda_
+    - prometheus:811.v1823c780b_e8e
     - cloudbees-disk-usage-simple:232.v713eeed2e1f4
-    - saml:4.519.v3927f2f0e020
+    - saml:4.525.v4f6a_7209447e
     - okhttp-api:4.11.0-183.va_87fc7a_89810
   overwritePlugins: true
   JCasC:
