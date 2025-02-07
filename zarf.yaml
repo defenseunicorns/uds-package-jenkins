@@ -8,6 +8,12 @@ metadata:
   description: "UDS Jenkins package"
   version: dev
   architecture: amd64
+  annotations:
+    title: Jenkins
+    description: Jenkins is an open-source automation server that helps you automate the building, testing, and deployment of any project across multiple platforms. Jenkins helps to avoid breaking changes so that you can save time and ensure the delivery of high-quality software. Its web interface provides an easy way to manage and test your applications before taking them to production. This image bundles the latest versions of community-recommended plugins, including pipelines and Git integration.
+    categories: Software Dev,IT Management,Productivity
+    keywords: Automation Server,CI/CD,Multi-Platform Support,Build Automation,Testing Automation,Deployment Automation,Pipeline Management,Git Integration,Community Plugins,Web Interface
+    tagline: **Build Great Things at Any Scale**
 
 variables:
   - name: DOMAIN
