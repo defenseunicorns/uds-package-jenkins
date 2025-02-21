@@ -65,6 +65,9 @@ tasks:
     description: Test an upgrade from the latest released package to the current branch
     actions:
       - task: upgrade:create-latest-tag-bundle
+        with:
+          # This ignores the old 4.x and 5.x tags
+          ignored_versions: "^[4,5]\\\\."
       - task: setup:k3d-test-cluster
       - task: deploy:test-bundle
       - task: create-dev-package
