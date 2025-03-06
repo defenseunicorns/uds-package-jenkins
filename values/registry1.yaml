@@ -5,7 +5,7 @@ controller:
   image:
     registry: "registry1.dso.mil"
     repository: "ironbank/opensource/jenkins/jenkins"
-    tag: "2.488-jdk17"
+    tag: "2.500-jdk17"
   sidecars:
     configAutoReload:
       image:
@@ -13,21 +13,21 @@ controller:
         repository: "ironbank/kiwigrid/k8s-sidecar"
         tag: "1.30.0"
   installPlugins:
-    - kubernetes:4287.v73451380b_576
+    - kubernetes:4324.vfec199a_33512
     - workflow-aggregator:600.vb_57cdd26fdd7
     - git:5.2.2
-    - configuration-as-code:1850.va_a_8c31d3158b_
-    - oic-auth:4.340.ve70636c6590e
-    - prometheus:784.vea_eca_f6592eb_
-    - cloudbees-disk-usage-simple:203.v3f46a_7462b_1a_
-    - saml:4.487.v9f1c3328f1c0
-    - okhttp-api:4.11.0-181.v1de5b_83857df
-    - pipeline-graph-analysis:216.vfd8b_ece330ca_
-    - pipeline-model-definition:2.2214.vb_b_34b_2ea_9b_83
-    - pipeline-model-extensions:2.2214.vb_b_34b_2ea_9b_83
-    - pipeline-rest-api:2.34
-    - workflow-job:1436.vfa_244484591f
-    - workflow-multibranch:795.ve0cb_1f45ca_9a_
+    - configuration-as-code:1932.v75cb_b_f1b_698d
+    - oic-auth:4.487.v5eb_cdf31cf09
+    - prometheus:819.v50953a_c560dd
+    - cloudbees-disk-usage-simple:239.v6a_f1a_c1c8046
+    - saml:4.525.v4f6a_7209447e
+    - okhttp-api:4.11.0-183.va_87fc7a_89810
+    - pipeline-graph-analysis:231.v56354571a_da_0
+    - pipeline-model-definition:2.2247.va_423189a_7dff
+    - pipeline-model-extensions:2.2247.va_423189a_7dff
+    - pipeline-rest-api:2.37
+    - workflow-job:1505.vea_4b_20a_4a_495
+    - workflow-multibranch:803.v08103b_87c280
 
 agent:
   image:
