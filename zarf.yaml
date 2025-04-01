@@ -24,7 +24,7 @@ components:
     description: "SSO secret for jenkins"
     import:
       path: common
-  
+
   # Note: upstream flavor is experimental
   - name: jenkins
     required: true
@@ -43,7 +43,7 @@ components:
       - docker.io/jenkins/jenkins:2.500-jdk17
       - docker.io/kiwigrid/k8s-sidecar:1.30.1
       - docker.io/jenkins/inbound-agent:3256.v88a_f6e922152-1
-  
+
   - name: jenkins
     required: true
     description: "Deploy jenkins with registry1 images"
@@ -61,7 +61,7 @@ components:
       - registry1.dso.mil/ironbank/opensource/jenkins/jenkins:2.500-jdk17
       - registry1.dso.mil/ironbank/opensource/jenkins/inbound-agent:3186.vc3b_7249b_87eb_-1
       - registry1.dso.mil/ironbank/kiwigrid/k8s-sidecar:1.30.0
-  
+
   - name: jenkins
     required: true
     description: "Deploy jenkins with unicorn images"
