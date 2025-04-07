@@ -20,14 +20,14 @@ controller:
       memory: "8192Mi"
   installPlugins:
     - kubernetes:4324.vfec199a_33512
-    - workflow-aggregator:600.vb_57cdd26fdd7
+    - workflow-aggregator:608.v67378e9d3db_1
     - git:5.2.2
-    - configuration-as-code:1932.v75cb_b_f1b_698d
-    - oic-auth:4.487.v5eb_cdf31cf09
+    - configuration-as-code:1953.v148f87d74b_1e
+    - oic-auth:4.494.v6b_f419104767
     - prometheus:819.v50953a_c560dd
     - cloudbees-disk-usage-simple:239.v6a_f1a_c1c8046
     - saml:4.525.v4f6a_7209447e
-    - okhttp-api:4.11.0-183.va_87fc7a_89810
+    - okhttp-api:4.11.0-189.v976fa_d3379d6
   overwritePlugins: true
   JCasC:
     defaultConfig: true
