@@ -22,7 +22,7 @@ controller:
     - kubernetes:4324.vfec199a_33512
     - workflow-aggregator:608.v67378e9d3db_1
     - git:5.2.2
-    - configuration-as-code:1953.v148f87d74b_1e
+    - configuration-as-code:1958.vddc0d369b_e16
     - oic-auth:4.494.v6b_f419104767
     - prometheus:819.v50953a_c560dd
     - cloudbees-disk-usage-simple:239.v6a_f1a_c1c8046
