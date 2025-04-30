@@ -19,7 +19,7 @@ tasks:
     description: Create K3D Cluster with lite UDS-Core + Jenkins
     actions:
       - task: create-dev-package
-      - task: setup:k3d-full-cluster
+      - task: setup:k3d-test-cluster
       - task: create-deploy-test-bundle
 
   - name: default-full
