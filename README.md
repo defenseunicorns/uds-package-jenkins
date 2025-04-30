@@ -12,6 +12,9 @@ This package is designed to be deployed on [UDS Core](https://github.com/defense
 
 The Jenkins Package expects to be deployed on top of [UDS Core](https://github.com/defenseunicorns/uds-core).
 
+> [!IMPORTANT]
+> **NOTE #1:** This package has been migrated to use Istio Ambient. Minimum version of uds-core required is `0.40.x`
+
 ## Flavors
 
 | Flavor    | Description                                            | Example Creation                     |
