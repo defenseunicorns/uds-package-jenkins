@@ -16,18 +16,18 @@ controller:
     - kubernetes:4324.vfec199a_33512
     - workflow-aggregator:608.v67378e9d3db_1
     - git:5.2.2
-    - configuration-as-code:1953.v148f87d74b_1e
+    - configuration-as-code:1958.vddc0d369b_e16
     - oic-auth:4.494.v6b_f419104767
     - prometheus:819.v50953a_c560dd
-    - cloudbees-disk-usage-simple:239.v6a_f1a_c1c8046
+    - cloudbees-disk-usage-simple:241.v0ea_d9a_a_96ee8
     - saml:4.525.v4f6a_7209447e
     - okhttp-api:4.11.0-189.v976fa_d3379d6
     - pipeline-graph-analysis:235.vb_a_a_36b_f248c2
-    - pipeline-model-definition:2.2247.va_423189a_7dff
+    - pipeline-model-definition:2.2255.v56a_15e805f12
     - pipeline-model-extensions:2.2247.va_423189a_7dff
     - pipeline-rest-api:2.37
-    - workflow-job:1508.v9cb_c3a_a_89dfd
-    - workflow-multibranch:803.v08103b_87c280
+    - workflow-job:1520.v56d65e3b_4566
+    - workflow-multibranch:806.vb_b_688f609ee9
 
 agent:
   image:
