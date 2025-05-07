@@ -14,12 +14,12 @@ const getUniqueScreenshotPath = (baseName: string) => {
 };
 
 setup('authenticate', async ({ page, context, baseURL }) => {
-  console.log('Current working directory:', process.cwd());
+  console.log('📁 Current working directory:', process.cwd());
     await page.goto(baseURL);
     await page.getByLabel("Username or email").fill("doug");
     await page.getByLabel("Password").fill("unicorn123!@#UN");
-    const screenshotPath = getUniqueScreenshotPath('beforeLogin');
-    console.log('Screenshot will be saved to:', screenshotPath);
+    const screenshotPath = getUniqueScreenshotPath('Login-page');
+    console.log('💾 Screenshot will be saved to:', screenshotPath);
     await page.screenshot({ path: screenshotPath });
     await page.getByRole("button", { name: "Log In" }).click();
 

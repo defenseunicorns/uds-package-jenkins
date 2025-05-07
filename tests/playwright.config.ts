@@ -37,7 +37,6 @@ export default defineConfig({
 
     ...[
       'Desktop Chrome',
-      'Desktop Firefox',
     ].map((p) => ({
       name: devices[p].defaultBrowserType,
       dependencies: ['setup'],
