@@ -20,6 +20,9 @@ tasks:
     actions:
       - task: create-dev-package
       - task: setup:k3d-test-cluster
+        with:
+          options: --set K3D_EXTRA_ARGS="-a=2" --oci-concurrency 1
+          use_checkpoint: "false"
       - task: create-deploy-test-bundle
 
   - name: default-full
@@ -39,6 +42,7 @@ tasks:
   - name: create-deploy-test-bundle
     description: Test and validate cluster is deployed with Jenkins
     actions:
+      - task: create-dev-package
       - task: create:test-bundle
       - task: deploy:test-bundle
       - task: setup:create-doug-user
