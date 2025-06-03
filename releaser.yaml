@@ -9,5 +9,5 @@ flavors:
     # renovate-uds: datasource=docker depName=registry1.dso.mil/ironbank/opensource/jenkins/jenkins extractVersion=^(?<version>\d+\.\d+)(-jdk\d+)?$
     version: 2.512-uds.0
   - name: unicorn
-    # renovate-uds: datasource=docker depName=cgr.dev/du-uds-defenseunicorns/jenkins
-    version: 2.511-uds.0
+    # renovate-uds: datasource=docker depName=registry1.dso.mil/ironbank/opensource/jenkins/jenkins extractVersion=^(?<version>\d+\.\d+)(-jdk\d+)?$
+    version: 2.512-uds.0

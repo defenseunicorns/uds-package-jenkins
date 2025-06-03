@@ -42,7 +42,6 @@ tasks:
   - name: create-deploy-test-bundle
     description: Test and validate cluster is deployed with Jenkins
     actions:
-      - task: create-dev-package
       - task: create:test-bundle
       - task: deploy:test-bundle
       - task: setup:create-doug-user

@@ -14,16 +14,11 @@ const getUniqueScreenshotPath = (baseName: string) => {
 
 let defaultBrowserType: string;
 
-test.beforeEach(async ({ browserName }) => {
-  // Use browserName provided by Playwright to determine the browser type
-  defaultBrowserType = browserName;
-});
-
 test.describe('Jenkins Pipeline', () => {
   const randomSuffix = Math.floor(Math.random() * 10000); // Generate a random number
 
   test('Should create a simple pipeline and check its status', async ({ page, baseURL }) => {
-    const pipelineName = `example-pipeline-${defaultBrowserType}-${randomSuffix}`;
+    const pipelineName = `test-pipeline-${randomSuffix}`;
     // Navigate to Jenkins dashboard
     await page.goto(baseURL);
     var screenshotPath = getUniqueScreenshotPath('1.home-page');
