@@ -8,7 +8,7 @@ defense-unicorns-distro/preflight.sh
 .terraform
 tmp
 zarf-sbom
-.vscode/
+
 .cache/
 .idea/
 build/
@@ -19,6 +19,7 @@ zarf-sbom
 tmp/
 values-*.yaml
 overlay-values-*
+.tool-versions
 
 # Terraform
 test/tf/public-ec2-instance/.test-data
@@ -30,4 +31,7 @@ terraform.tfstate.backup
 # Tests
 node_modules/
 .playwright/
-screenshots/
+tests/screenshots/
+
+# VSCode
+.vscode/

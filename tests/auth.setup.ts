@@ -18,7 +18,7 @@ setup('authenticate', async ({ page, context, baseURL }) => {
     await page.goto(baseURL);
     await page.getByLabel("Username or email").fill("doug");
     await page.getByLabel("Password").fill("unicorn123!@#UN");
-    const screenshotPath = getUniqueScreenshotPath('Login-page');
+    const screenshotPath = getUniqueScreenshotPath('1.login-page');
     console.log('💾 Screenshot will be saved to:', screenshotPath);
     await page.screenshot({ path: screenshotPath });
     await page.getByRole("button", { name: "Log In" }).click();
