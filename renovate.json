@@ -23,12 +23,6 @@
       ]
     },
     {
-      "matchPackageNames": ["mcr.microsoft.com/playwright"],
-      "groupName": "jenkins Support Dependencies",
-      "labels": ["support-deps"],
-      "commitMessageTopic": "support-deps"
-    },
-    {
       "groupName": "jenkins Package Dependencies",
       "labels": [
         "package-deps"
@@ -37,7 +31,8 @@
       "matchDatasources": [
         "docker",
         "helm",
-        "git-tags"
+        "git-tags",
+        "!mcr.microsoft.com/playwright"
       ]
     },
     {
@@ -65,17 +60,6 @@
       "versioningTemplate": "maven",
       "depNameTemplate": "jenkinsci/{{{depName}}}-plugin",
       "datasourceTemplate": "github-tags"
-    }
-  ],
-  "regexManagers": [
-    {
-      "fileMatch": ["^tasks/test.yaml$"],
-      "matchStrings": [
-        "mcr\\.microsoft\\.com/playwright:(?<currentValue>[^\\s\"']+)"
-      ],
-      "datasourceTemplate": "docker",
-      "packageNameTemplate": "mcr.microsoft.com/playwright",
-      "versioningTemplate": "docker"
     }
   ]
 }
