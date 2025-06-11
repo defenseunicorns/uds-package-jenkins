@@ -28,11 +28,11 @@
         "package-deps"
       ],
       "commitMessageTopic": "package-deps",
+      "matchPackageNames": ["!mcr.microsoft.com/playwright"],
       "matchDatasources": [
         "docker",
         "helm",
-        "git-tags",
-        "!mcr.microsoft.com/playwright"
+        "git-tags"
       ]
     },
     {
