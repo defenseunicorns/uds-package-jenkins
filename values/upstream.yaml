@@ -5,13 +5,13 @@ controller:
   image:
     registry: "docker.io"
     repository: "jenkins/jenkins"
-    tag: "2.514-jdk17"
+    tag: "2.515-jdk17"
   sidecars:
     configAutoReload:
       image:
         registry: "docker.io"
         repository: "kiwigrid/k8s-sidecar"
-        tag: "1.30.3"
+        tag: "1.30.5"
 
 agent:
   image:
