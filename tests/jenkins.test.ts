@@ -21,11 +21,12 @@ test.describe('Jenkins Pipeline', () => {
     const pipelineName = `test-pipeline-${randomSuffix}`;
     // Navigate to Jenkins dashboard
     await page.goto(baseURL);
-    var screenshotPath = getUniqueScreenshotPath('1.home-page');
 
     // Wait for the dashboard to load and verify login by checking for the logout button
     await expect(page.getByText('New Item')).toBeVisible({ timeout: 10000 });
     console.log('🔓 Logged in successfully using stored auth state');
+    var screenshotPath = getUniqueScreenshotPath('2.home-page');
+    await page.screenshot({ path: screenshotPath });
 
     // Wait for the "New Item" link to be visible and click it
     await page.waitForSelector('a.task-link[href="/view/all/newJob"]', { timeout: 30000 });
@@ -45,7 +46,7 @@ test.describe('Jenkins Pipeline', () => {
     // Verify if 'Pipeline' type is checked (aria-checked="true")
     await page.waitForSelector('li.org_jenkinsci_plugins_workflow_job_WorkflowJob.active[aria-checked="true"]', { timeout: 5000 });
     console.log('✅ Pipeline job type is checked');
-    var screenshotPath = getUniqueScreenshotPath('2.job-page');
+    var screenshotPath = getUniqueScreenshotPath('3.job-page');
     await page.screenshot({ path: screenshotPath });
 
     // Click OK to create the pipeline
@@ -83,7 +84,7 @@ test.describe('Jenkins Pipeline', () => {
     await page.fill('.ace_text-input', pipelineScript);
     console.log('📝 Entered pipeline script');
     await page.waitForTimeout(2000);
-    screenshotPath = getUniqueScreenshotPath('3.pipeline-page');
+    screenshotPath = getUniqueScreenshotPath('4.pipeline-page');
     await page.screenshot({ path: screenshotPath });
 
     // Save the pipeline
@@ -105,7 +106,7 @@ test.describe('Jenkins Pipeline', () => {
     // Assert that the build was successful
     await page.waitForSelector('svg[tooltip="Success"][title="Success"]', { timeout: 60000 });
     console.log('🎉 Build was successful');
-    screenshotPath = getUniqueScreenshotPath('4.results-page');
+    screenshotPath = getUniqueScreenshotPath('5.results-page');
     await page.screenshot({ path: screenshotPath });
   });
 });
