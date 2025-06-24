@@ -22,7 +22,7 @@ jobs:
       id-token: write
     strategy:
       matrix:
-        flavor: [upstream, registry1]
+        flavor: [upstream, registry1, unicorn]
         architecture: [amd64]
     uses: defenseunicorns/uds-common/.github/workflows/callable-publish.yaml@5ede1c7bd7c78707113b93102ace8433b0272eb7 # v1.16.2
     with:
