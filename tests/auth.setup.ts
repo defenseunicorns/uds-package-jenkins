@@ -21,7 +21,7 @@ setup('authenticate', async ({ page, context, baseURL }) => {
     const screenshotPath = getUniqueScreenshotPath('1.login-page');
     console.log('💾 Screenshot will be saved to:', screenshotPath);
     await page.screenshot({ path: screenshotPath });
-    await page.getByRole("button", { name: "Log In" }).click();
+    await page.getByRole("button", { name: "Sign In" }).click();
 
     // ensure auth cookies were set
     const cookies = await context.cookies();

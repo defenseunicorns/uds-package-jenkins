@@ -19,7 +19,7 @@ controller:
       cpu: "2000m"
       memory: "8192Mi"
   installPlugins:
-    - kubernetes:4353.vb_47977da_9417
+    - kubernetes:4358.vcfd9c5a_0a_f51
     - workflow-aggregator:608.v67378e9d3db_1
     - git:5.2.2
     - configuration-as-code:1971.vf9280461ea_89
