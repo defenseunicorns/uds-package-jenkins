@@ -23,7 +23,7 @@ controller:
     - workflow-aggregator:608.v67378e9d3db_1
     - git:5.2.2
     - configuration-as-code:1971.vf9280461ea_89
-    - oic-auth:4.520.v7208b_4ff730b_
+    - oic-auth:4.524.v38858a_b_1c6a_4
     - prometheus:819.v50953a_c560dd
     - cloudbees-disk-usage-simple:241.v0ea_d9a_a_96ee8
     - saml:4.544.v264eea_ed3eed

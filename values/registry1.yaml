@@ -5,19 +5,19 @@ controller:
   image:
     registry: "registry1.dso.mil"
     repository: "ironbank/opensource/jenkins/jenkins"
-    tag: "2.517-jdk17"
+    tag: "2.519-jdk17"
   sidecars:
     configAutoReload:
       image:
         registry: "registry1.dso.mil"
         repository: "ironbank/kiwigrid/k8s-sidecar"
-        tag: "1.30.6"
+        tag: "1.30.7"
   installPlugins:
     - kubernetes:4353.vb_47977da_9417
     - workflow-aggregator:608.v67378e9d3db_1
     - git:5.2.2
     - configuration-as-code:1971.vf9280461ea_89
-    - oic-auth:4.520.v7208b_4ff730b_
+    - oic-auth:4.524.v38858a_b_1c6a_4
     - prometheus:819.v50953a_c560dd
     - cloudbees-disk-usage-simple:241.v0ea_d9a_a_96ee8
     - saml:4.544.v264eea_ed3eed
@@ -26,7 +26,7 @@ controller:
     - pipeline-model-definition:2.2255.v56a_15e805f12
     - pipeline-model-extensions:2.2247.va_423189a_7dff
     - pipeline-rest-api:2.37
-    - workflow-job:1537.v66038d35fc76
+    - workflow-job:1540.v295eccc9778f
     - workflow-multibranch:806.vb_b_688f609ee9
 
 agent:

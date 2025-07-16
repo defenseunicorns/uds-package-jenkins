@@ -3,35 +3,19 @@
 
 controller:
   image:
-    registry: "registry1.dso.mil"
-    repository: "ironbank/opensource/jenkins/jenkins"
-    tag: "2.517-jdk17"
+    registry: ""
+    repository: ""
+    tag: ""
   sidecars:
     configAutoReload:
       image:
-        registry: "registry1.dso.mil"
-        repository: "ironbank/kiwigrid/k8s-sidecar"
-        tag: "1.30.6"
-  installPlugins:
-    - kubernetes:4353.vb_47977da_9417
-    - workflow-aggregator:608.v67378e9d3db_1
-    - git:5.2.2
-    - configuration-as-code:1971.vf9280461ea_89
-    - oic-auth:4.494.v6b_f419104767
-    - prometheus:819.v50953a_c560dd
-    - cloudbees-disk-usage-simple:241.v0ea_d9a_a_96ee8
-    - saml:4.544.v264eea_ed3eed
-    - okhttp-api:4.11.0-189.v976fa_d3379d6
-    - pipeline-graph-analysis:241.vc3d48fb_b_2582
-    - pipeline-model-definition:2.2255.v56a_15e805f12
-    - pipeline-model-extensions:2.2247.va_423189a_7dff
-    - pipeline-rest-api:2.37
-    - workflow-job:1532.va_9a_d244074a_3
-    - workflow-multibranch:806.vb_b_688f609ee9
+        registry: ""
+        repository: ""
+        tag: ""
 
 agent:
   image:
     # -- Repository to pull the agent jnlp image from
-    repository: "registry1.dso.mil/ironbank/opensource/jenkins/inbound-agent"
+    repository: ""
     # -- Tag of the image to pull
-    tag: "3186.vc3b_7249b_87eb_-1"
+    tag: ""
