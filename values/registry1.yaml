@@ -22,12 +22,6 @@ controller:
     - cloudbees-disk-usage-simple:241.v0ea_d9a_a_96ee8
     - saml:4.569.vcff838e19ed1
     - okhttp-api:4.11.0-189.v976fa_d3379d6
-    - pipeline-graph-analysis:241.vc3d48fb_b_2582
-    - pipeline-model-definition:2.2258.v4e96d2b_da_f9b_
-    - pipeline-model-extensions:2.2247.va_423189a_7dff
-    - pipeline-rest-api:2.37
-    - workflow-job:1540.v295eccc9778f
-    - workflow-multibranch:806.vb_b_688f609ee9
 
 agent:
   image:
