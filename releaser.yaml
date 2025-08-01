@@ -4,11 +4,11 @@
 flavors:
   - name: upstream
     # renovate-uds: datasource=docker depName=docker.io/jenkins/jenkins extractVersion=^(?<version>\d+\.\d+)(-jdk\d+)?$
-    version: 2.520-uds.0
+    version: 2.521-uds.0
   - name: registry1
     # renovate-uds: datasource=docker depName=registry1.dso.mil/ironbank/opensource/jenkins/jenkins extractVersion=^(?<version>\d+\.\d+)(-jdk\d+)?$
-    version: 2.520-uds.0
+    version: 2.521-uds.0
   # Placeholder for when a Unicorn flavor is made
   # - name: unicorn
   #   # renovate-uds: datasource=docker depName=docker.io/jenkins/jenkins extractVersion=^(?<version>\d+\.\d+)(-jdk\d+)?$
-  #   version: 2.520-uds.0
+  #   version: 2.521-uds.0
