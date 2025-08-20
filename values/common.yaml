@@ -31,11 +31,11 @@ controller:
   overwritePlugins: true
   JCasC:
     defaultConfig: true
-    configScripts:
-      sso: |-
-        jenkins:
-          securityRealm:
-            ###ZARF_VAR_JENKINS_SSO###
+    securityRealm: |-
+      ###ZARF_VAR_JENKINS_SSO###
+    authorizationStrategy: |-
+      loggedInUsersCanDoAnything:
+        allowAnonymousRead: false
 
   probes:
     startupProbe:

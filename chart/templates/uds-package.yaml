@@ -84,16 +84,16 @@ spec:
       secretTemplate:
         sso: |-
           saml:
-                        advancedConfiguration:
-                          forceAuthn: false
-                          spEntityId: "uds-package-jenkins-saml"
-                        binding: "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
-                        displayNameAttributeName: "name"
-                        emailAttributeName: "email"
-                        groupsAttributeName: "groups"
-                        idpMetadataConfiguration:
-                          period: 1440
-                          url: "https://sso.{{ .Values.domain }}/realms/uds/protocol/saml/descriptor"
+                  advancedConfiguration:
+                    forceAuthn: false
+                    spEntityId: "uds-package-jenkins-saml"
+                  binding: "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+                  displayNameAttributeName: "name"
+                  emailAttributeName: "email"
+                  groupsAttributeName: "groups"
+                  idpMetadataConfiguration:
+                    period: 1440
+                    url: "https://sso.{{ .Values.domain }}/realms/uds/protocol/saml/descriptor"
     {{- else if eq .Values.sso.protocol "openid_connect"  }}
       clientId: uds-package-jenkins-openid-connect
 
@@ -109,19 +109,19 @@ spec:
       secretTemplate:
         sso: |-
           oic:
-                        clientId: "uds-package-jenkins-openid-connect"
-                        clientSecret: "clientField(secret)"
-                        wellKnownOpenIDConfigurationUrl: "https://sso.{{ .Values.domain }}/realms/uds"
-                        tokenServerUrl: "https://sso.{{ .Values.domain }}/realms/uds/protocol/openid-connect/token"
-                        authorizationServerUrl: "https://sso.{{ .Values.domain }}/realms/uds/protocol/openid-connect/auth"
-                        scopes: "openid profile"
-                        disableSslVerification: false
-                        endSessionEndpoint: "https://sso.{{ .Values.domain }}/realms/uds/protocol/openid-connect/logout"
-                        escapeHatchEnabled: false
-                        logoutFromOpenidProvider: true
-                        userNameField: "preferred_username"
-                        emailFieldName: "email"
-                        groupsFieldName: "groups"
+                  clientId: "uds-package-jenkins-openid-connect"
+                  clientSecret: "clientField(secret)"
+                  wellKnownOpenIDConfigurationUrl: "https://sso.{{ .Values.domain }}/realms/uds"
+                  tokenServerUrl: "https://sso.{{ .Values.domain }}/realms/uds/protocol/openid-connect/token"
+                  authorizationServerUrl: "https://sso.{{ .Values.domain }}/realms/uds/protocol/openid-connect/auth"
+                  scopes: "openid profile"
+                  disableSslVerification: false
+                  endSessionEndpoint: "https://sso.{{ .Values.domain }}/realms/uds/protocol/openid-connect/logout"
+                  escapeHatchEnabled: false
+                  logoutFromOpenidProvider: true
+                  userNameField: "preferred_username"
+                  emailFieldName: "email"
+                  groupsFieldName: "groups"
     {{- end }}
   {{- end }}
 
