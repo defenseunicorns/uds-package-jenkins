@@ -13,7 +13,7 @@ controller:
         repository: "ironbank/kiwigrid/k8s-sidecar"
         tag: "1.30.9"
   installPlugins:
-    - kubernetes:4358.vcfd9c5a_0a_f51
+    - kubernetes:4369.va_9a_89327dd35
     - workflow-aggregator:608.v67378e9d3db_1
     - git:5.2.2
     - configuration-as-code:1985.vdda_32d0c4ea_b_
