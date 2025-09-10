@@ -5,7 +5,7 @@ controller:
   image:
     registry: "docker.io"
     repository: "jenkins/jenkins"
-    tag: "2.526-jdk17"
+    tag: "2.527-jdk17"
   sidecars:
     configAutoReload:
       image:
