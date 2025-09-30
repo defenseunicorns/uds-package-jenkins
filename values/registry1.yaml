@@ -13,15 +13,15 @@ controller:
         repository: "ironbank/kiwigrid/k8s-sidecar"
         tag: "1.30.10"
   installPlugins:
-    - kubernetes:4371.vb_33b_086d54a_1
+    - kubernetes:4384.v1b_6367f393d9
     - workflow-aggregator:608.v67378e9d3db_1
     - git:5.2.2
-    - configuration-as-code:1985.vdda_32d0c4ea_b_
-    - oic-auth:4.600.vd5a_61e076596
+    - configuration-as-code:1995.v540b_50a_eb_0c1
+    - oic-auth:4.609.v9de140f63d01
     - prometheus:819.v50953a_c560dd
     - cloudbees-disk-usage-simple:256.v20ec4eb_884f1
     - saml:4.583.vc68232f7018a_
-    - okhttp-api:4.11.0-189.v976fa_d3379d6
+    - okhttp-api:4.12.0-195.vc02552c04ffd
 
 agent:
   image:
