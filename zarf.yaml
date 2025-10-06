@@ -58,7 +58,7 @@ components:
         valuesFiles:
           - values/registry1.yaml
     images:
-      - registry1.dso.mil/ironbank/opensource/jenkins/jenkins:2.530-jdk17
+      - registry1.dso.mil/ironbank/opensource/jenkins/jenkins:2.529-jdk17
       - registry1.dso.mil/ironbank/opensource/jenkins/inbound-agent:3186.vc3b_7249b_87eb_-1
       - registry1.dso.mil/ironbank/kiwigrid/k8s-sidecar:1.30.10
 
