@@ -39,7 +39,7 @@ concurrency:
 
 jobs:
   auto-update:
-    uses: defenseunicorns/uds-common/.github/workflows/callable-auto-update.yaml@cshoffner/more-testing
+    uses: defenseunicorns/uds-common/.github/workflows/callable-auto-update.yaml@cshoffner/auto-update-images
     with:
       dry-run: true
     secrets: inherit #
