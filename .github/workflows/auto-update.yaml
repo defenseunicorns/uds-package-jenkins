@@ -27,10 +27,9 @@ on:
       - SECURITY.md
 
 # Permissions for the GITHUB_TOKEN used by the workflow.
-# permissions:
-#   contents: write # Allows reading the content of the repository.
-#   packages: read # Allows reading the content of the repository's packages.
-#   id-token: write
+permissions:
+  contents: write # Allows reading the content of the repository.
+  packages: read # Allows reading the content of the repository's packages.
 
 # Abort prior jobs in the same workflow / PR
 concurrency:
@@ -40,6 +39,4 @@ concurrency:
 jobs:
   auto-update:
     uses: defenseunicorns/uds-common/.github/workflows/callable-auto-update.yaml@cshoffner/auto-update-images
-    with:
-      dry-run: true
     secrets: inherit #
