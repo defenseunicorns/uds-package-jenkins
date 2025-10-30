@@ -26,7 +26,7 @@ controller:
     - oic-auth:4.609.v9de140f63d01
     - prometheus:819.v50953a_c560dd
     - cloudbees-disk-usage-simple:256.v20ec4eb_884f1
-    - saml:4.583.vc68232f7018a_
+    - saml:4.590.v6170b_1013da_f
     - okhttp-api:4.12.0-195.vc02552c04ffd
   overwritePlugins: true
   JCasC:
