@@ -5,7 +5,7 @@ controller:
   image:
     registry: "registry1.dso.mil"
     repository: "ironbank/opensource/jenkins/jenkins"
-    tag: "2.532-jdk17"
+    tag: "2.534-jdk17"
   sidecars:
     configAutoReload:
       image:
@@ -20,7 +20,7 @@ controller:
     - oic-auth:4.609.v9de140f63d01
     - prometheus:819.v50953a_c560dd
     - cloudbees-disk-usage-simple:256.v20ec4eb_884f1
-    - saml:4.583.vc68232f7018a_
+    - saml:4.590.v6170b_1013da_f
     - okhttp-api:4.12.0-195.vc02552c04ffd
 
 agent:
@@ -28,4 +28,4 @@ agent:
     # -- Repository to pull the agent jnlp image from
     repository: "registry1.dso.mil/ironbank/opensource/jenkins/inbound-agent"
     # -- Tag of the image to pull
-    tag: "3186.vc3b_7249b_87eb_-1"
+    tag: "3291.vb_131b_dc231fa_-1"
